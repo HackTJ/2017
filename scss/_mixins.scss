@@ -1,0 +1,62 @@
+@mixin set-font($family, $size, $weight){
+  font:{
+    family: $family;
+    size: $size;
+    weight: $weight;
+  }
+}
+
+@mixin clearfix{
+  &:before, &:after{
+    display: table;
+    content: "";
+  }
+  &:after {
+      clear:both;
+  }
+}
+
+@mixin full-height {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+@mixin cover($url) {
+  background: url($url) no-repeat center center fixed;
+  @include background-size(cover); 
+}
+
+
+@mixin hover-active-focus($property, $value) {
+    &:hover, &:active, &:focus {
+        #{$property}: $value;
+    }
+}
+
+@mixin hide-text{
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+$break-small: 640px;
+$break-large: 1000px;
+
+@mixin respond-to($media) {
+  @if $media == mobile {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == tablet {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == desktop {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+}
+
+@mixin box-shadow($params) {
+  -moz-box-shadow: $params;
+  -webkit-box-shadow: $params;
+  box-shadow: $params;
+}
