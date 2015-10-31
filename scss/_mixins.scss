@@ -6,6 +6,28 @@
   }
 }
 
+@mixin font-size($font-size, $rem-sizing: true, $line-height: true) {
+  font-size: $font-size;
+
+  @if $rem-sizing == true {
+    font-size: calculate-rem($font-size);
+  }
+
+  @if $line-height == true {
+    line-height: calculate-line-height($font-size);
+  }
+}
+
+@mixin vendor($property, $value, $vendors: "") {
+  @each $vendor in $vendors {
+    @if $vendor != "" {
+      -#{$vendor}-#{$property}: $value;
+    }
+  }
+
+  #{$property}: $value;
+}
+
 @mixin clearfix{
   &:before, &:after{
     display: table;

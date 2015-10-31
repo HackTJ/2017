@@ -14,9 +14,19 @@ html(prefix="og: http://ogp.me/ns#")
 
 		link(rel="icon" type="image/png" href="/img/favicon.png")
 
-		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto:300", type="text/css")
+		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto:100,300,400", type="text/css")
 		link(rel='stylesheet', href='css/main.css', type='text/css')
 	body
 		.centered-box
-			img(src="img/logo-main.png" alt="HackTJ")
-			
+			img.logo(src="img/logo-main.png" alt="HackTJ")
+			.event-date Feburary 6th-7th, 2016
+			.event-location Thomas Jefferson High School for Science and Technology
+			form.interest-form
+				label.form-text Get notified when registration opens
+				.input-line
+					input.contact(type="text" placeholder="Email Address or Phone #")
+					button.submit.is-disabled(type="button") 
+						.text Remind Me!
+						.icon
+			.confirmation-text &nsbp;
+	script(src="js/main.js" type="text/javascript")

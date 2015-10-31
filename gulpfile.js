@@ -8,7 +8,6 @@ var homepageRepo = {
 	remoteUrl: "https://github.com/HackTJ/hacktj.github.io.git",
 	branch: "master",
 	cacheDir: '.homepage'
-
 }
 /* ----------------------------------------------------- */
 
