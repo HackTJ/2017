@@ -16,45 +16,67 @@ body {
 
 .centered-box{
 	display: block;
+	width: 100%;
 	max-width: 700px;
 	margin: auto;
 	
-	position: fixed;
-	top: 50%;
+	position: absolute;
+	top: 5%;
 	left: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, 0);
 
 	.logo{
 		display: block;
 		max-width: 500px;
 		margin: auto;
+		@include respond-to("mobile"){
+			max-width: 90%;
+		}
 	}
 	.event-date, .event-location{
 		width: 100%;
 		text-align: center;
 		// font-weight: 100;
 		margin-top: 10px;
+		@include respond-to("mobile"){
+			width: 90%;
+			text-align: center;
+			margin: auto;
+		}
 		&.event-date{
 			font-size: 45px;
+			@include respond-to("mobile"){
+				font-size: 32px;
+			}
 		}
 		&.event-location{
 			font-size: 25px;
 			font-weight: 100;
+			@include respond-to("mobile"){
+				margin-top: 10px;
+				font-size: 22px;
+			}
 		}
 	}
 
 	.interest-form{
-		margin-top: 50px;
+		margin-top: 10%;
+		margin-left: 5%;
+		margin-right: 5%;
 		label.form-text{
 			font-weight: 100;
 		}
 		.input-line{
 			margin-top: 10px;
-			height: 50px;
+			overflow: hidden;
 			input.contact{
 				display: inline-block;
-				height: 100%;
-				width: 68%;
+				height: 50px;
+				width: 69%;
+				@include respond-to("mobile"){
+					display: block;
+					width: 100%;
+				}
 
 				outline: none;
 				-webkit-appearance: none;
@@ -74,10 +96,6 @@ body {
 					border-color: rgba(255, 255, 255, 0.6);
 				}
 				transition: border-color 0.25s;
-
-				&.is-done{
-					pointer-events: none;
-				}
 
 				$placeholder-color: rgba(255, 255, 255, 0.6);
 				$placeholder-weight: 100;
@@ -110,8 +128,14 @@ body {
 			}	
 			button.submit{
 				display: inline-block;
-				height: 100%;
+				height: 50px;
 				width: 29%;
+				@include respond-to("mobile"){
+					display: block;
+					width: 100%;
+					margin-top: 10px;
+				}
+
 				float: right;
 				background: none;
 				overflow: hidden;
@@ -135,8 +159,8 @@ body {
 					top: 100%;
 				}
 				&.is-disabled{
-					color: rgba(255, 255, 255, 0.6);
-					border-color: rgba(255, 255, 255, 0.6);
+					color: rgba(230, 230, 230, 0.6);
+					border-color: rgba(230, 230, 230, 0.6);
 					cursor: none;
 					pointer-events: none;
 				}
