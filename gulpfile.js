@@ -113,7 +113,6 @@ var deploy = {}
 deploy.event = function(){
 	var deferred = when.defer();
 	gulp.src("./out/**/*")
-		.pipe( debug() )
         .pipe( githubPages( eventRepo ) )
         .on('end', function(){
         	deferred.resolve();
