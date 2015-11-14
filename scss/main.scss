@@ -1,29 +1,168 @@
 $base-font-size: 14px;
 $hacktj-red: #EA5C5C;
 
-@import "mixins";
-@import "normalize";
+$body-family: "Avenir Next", sans-serif;
+$header-family: "Roboto", sans-serif;
+
+@import "concise/index";
 @import "icons/icons";
 @import "icons/helper";
 @import "icons/social/icons";
+@import "mixins";
 
 body {
-	background-color: $hacktj-red;
-	font-family: "Roboto", sans-serif;
+	font-family: $body-family;
 	font-weight: 300;
-	color: white;
+	color: #252525;
 }
 
-.centered-box{
+/************************************
+*	Base Styles						*
+*************************************/
+section{
+	padding: 40px 0;
 	display: block;
+	position: relative;
+	box-sizing: border-box;
 	width: 100%;
-	max-width: 700px;
-	margin: auto;
-	
-	position: absolute;
-	top: 5%;
-	left: 50%;
-	transform: translate(-50%, 0);
+	min-height: 100px;
+	.container{
+		display: block;
+		margin: auto;
+		max-width: 700px;
+		h1.section-title{
+			text-align: center;
+			font-size: 40px;
+			line-height: 1.3em;
+			font-weight: 100;
+			margin-bottom: 0.4em;
+		}
+	}
+}
+
+input{
+	display: inline-block;
+	height: 50px;
+	outline: none;
+	-webkit-appearance: none;
+	appearance: none;
+	box-shadow: none;
+	border: none;
+	border-radius: 5px;
+
+	padding: 15px;
+	font-size: 25px;
+	color: white;
+
+	$input-color: rgba(255, 255, 255, 0.2);
+	background-color: $input-color;
+	border: 1px solid transparent;
+	&:focus{
+		border-color: rgba(255, 255, 255, 0.6);
+	}
+	transition: border-color 0.25s;
+
+	$placeholder-color: rgba(255, 255, 255, 0.6);
+	$placeholder-weight: 100;
+	$placeholder-size: 20px;
+	$placeholder-padding: 2.5px;
+	&::-webkit-input-placeholder {
+		font-weight: $placeholder-weight;
+	  color: $placeholder-color;
+	  padding-top: $placeholder-padding;
+	  font-size: $placeholder-size;
+	}
+	&:-moz-placeholder {
+		font-weight: $placeholder-weight;
+	  color: $placeholder-color;
+	  padding-top: $placeholder-padding;
+		  font-size: $placeholder-size;
+	}
+	&::-moz-placeholder {
+		font-weight: $placeholder-weight;
+	  color: $placeholder-color;
+	  padding-top: $placeholder-padding;
+		  font-size: $placeholder-size;
+	}
+	&:-ms-input-placeholder {
+		font-weight: $placeholder-weight;
+	  color: $placeholder-color;
+	  padding-top: $placeholder-padding;
+		  font-size: $placeholder-size;
+	}
+}
+
+label {
+	font-weight: 100;
+}
+
+button{
+	display: inline-block;
+	height: 50px;
+	background: none;
+	overflow: hidden;
+	border: 1px solid white;
+	border-radius: 5px;
+	font-size: 20px;
+	cursor: pointer;
+	position: relative;
+	.text, .icon{
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		line-height: 50px;
+		transition: top 0.5s;
+	}
+	.icon{
+		font-size: 30px;
+		top: 100%;
+	}
+	&.is-disabled{
+		color: rgba(230, 230, 230, 0.6);
+		border-color: rgba(230, 230, 230, 0.6);
+		cursor: none;
+		pointer-events: none;
+	}
+	&.is-done{
+		.text{
+			top: -100%;
+		}
+		.icon{
+			top: 0;
+		}
+	}
+	&:hover{
+		background-color: $hacktj-red;
+		border-color: $hacktj-red;
+	}
+	&:active{
+		border-color: white;
+	}
+	transition: background-color 0.25s, border-color 0.25s, color 0.25s, padding-left 0.25s;
+}
+
+p.large{
+	font-size: 20px;
+	font-weight: 100;
+	line-height: 1.7em;
+}
+
+/************************************
+*	Hero Section					*
+*************************************/
+section.hero{
+	height: 100%;	
+	padding-top: 5%;
+
+	// @include linear-gradient-image(#fff, #222, '../img/monticello.png');
+	background-image: url(../img/monticello-gradient-blur.jpg);
+	background-size: cover;
+
+	font-family: $header-family;
+	color: white;
 
 	.logo{
 		display: block;
@@ -63,123 +202,24 @@ body {
 		margin-top: 10%;
 		margin-left: 5%;
 		margin-right: 5%;
-		label.form-text{
-			font-weight: 100;
-		}
 		.input-line{
 			margin-top: 10px;
 			overflow: hidden;
-			input.contact{
-				display: inline-block;
-				height: 50px;
+			.contact{
 				width: 69%;
 				@include respond-to("mobile"){
 					display: block;
 					width: 100%;
 				}
-
-				outline: none;
-				-webkit-appearance: none;
-				appearance: none;
-				box-shadow: none;
-				border: none;
-				border-radius: 5px;
-
-				padding: 15px;
-				font-size: 25px;
-				color: white;
-
-				$input-color: rgba(255, 255, 255, 0.2);
-				background-color: $input-color;
-				border: 1px solid transparent;
-				&:focus{
-					border-color: rgba(255, 255, 255, 0.6);
-				}
-				transition: border-color 0.25s;
-
-				$placeholder-color: rgba(255, 255, 255, 0.6);
-				$placeholder-weight: 100;
-				$placeholder-size: 20px;
-				$placeholder-padding: 2.5px;
-				&::-webkit-input-placeholder {
-					font-weight: $placeholder-weight;
-				  color: $placeholder-color;
-				  padding-top: $placeholder-padding;
-				  font-size: $placeholder-size;
-				}
-				&:-moz-placeholder {
-					font-weight: $placeholder-weight;
-				  color: $placeholder-color;
-				  padding-top: $placeholder-padding;
- 				  font-size: $placeholder-size;
-				}
-				&::-moz-placeholder {
-					font-weight: $placeholder-weight;
-				  color: $placeholder-color;
-				  padding-top: $placeholder-padding;
- 				  font-size: $placeholder-size;
-				}
-				&:-ms-input-placeholder {
-					font-weight: $placeholder-weight;
-				  color: $placeholder-color;
-				  padding-top: $placeholder-padding;
- 				  font-size: $placeholder-size;
-				}
 			}	
-			button.submit{
-				display: inline-block;
-				height: 50px;
+			.submit{
 				width: 29%;
+				float: right;
 				@include respond-to("mobile"){
 					display: block;
 					width: 100%;
 					margin-top: 10px;
 				}
-
-				float: right;
-				background: none;
-				overflow: hidden;
-				border: 1px solid white;
-				border-radius: 5px;
-				font-size: 20px;
-				cursor: pointer;
-				position: relative;
-				.text, .icon{
-					display: block;
-					position: absolute;
-					top: 0;
-					left: 0;
-					width: 100%;
-					height: 100%;
-					line-height: 50px;
-					transition: top 0.5s;
-				}
-				.icon{
-					font-size: 30px;
-					top: 100%;
-				}
-				&.is-disabled{
-					color: rgba(230, 230, 230, 0.6);
-					border-color: rgba(230, 230, 230, 0.6);
-					cursor: none;
-					pointer-events: none;
-				}
-				&.is-done{
-					.text{
-						top: -100%;
-					}
-					.icon{
-						top: 0;
-					}
-				}
-				&:hover{
-					background-color: white;
-					color: $hacktj-red;
-				}
-				&:active{
-					border-color: $hacktj-red;
-				}
-				transition: background-color 0.25s, border-color 0.25s, color 0.25s, padding-left 0.25s;
 			}
 		}
 	}
@@ -195,6 +235,118 @@ body {
 			opacity: 1;
 		}
 		transition: opacity 0.5s;
+	}
+}
+
+/************************************
+*	Intro Section					*
+*************************************/
+section.intro{
+	.container{
+		max-width: 650px;
+	}
+}
+
+section.faq{
+	.container{
+		max-width: 750px;
+	}
+	background-color: $hacktj-red;
+	color: white;
+	a{
+		display: inline-block;
+		color: white;
+		line-height: 1.0em;
+		border-bottom: 1px solid white;
+		vertical-align: middle;
+	}
+	line-height: 1.3em;
+	.faq-nav{
+		width: 100%;
+		position: relative;
+		background: white;
+		padding: 10px 50px;
+		@include row();
+		margin: 0;
+		.nav-item{
+			@include column(1/4);
+			color: #333;
+			cursor: pointer;
+			.icon{
+				display: block;
+				width: 100%;
+				text-align: center;
+				font-size: 40px;
+			}
+			.label{
+				display: block;
+				width: 100%;
+				text-align: center;
+				weight: 100%;
+			}
+			&:hover, &.current{
+				color: $hacktj-red;
+			}
+			transform: color 0.3s;
+		}
+		.underline-container{
+			display: block;
+			height: 5px;
+			position: absolute;
+			bottom: 0;
+			left: 50px;
+			right: 50px;
+			.underline{
+				position: absolute;
+				left: 0;
+				height: 100%;
+				background: $hacktj-red;
+				transition: left 0.7s;
+			}
+		}
+	}
+	.faq-container{
+		display: block;
+		position: relative;
+		overflow: hidden;
+		ul.page-group{
+			display: block;
+			position: relative;
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+			list-style: none;
+			white-space:nowrap;
+			transition: left 0.7s;
+		}
+		li.page{
+			padding: 25px;
+			padding-bottom: 0px;
+			display: inline-block;
+			@include row();
+			.question-group{
+				white-space:normal;
+				@include column(1/3);
+				.question{
+					font-family: $header-family;
+					display: block;
+					font-size: 22px;
+					text-align: center;
+					font-weight: 100;
+				}
+				.answer{
+					margin-top: 10px;
+					font-size: 15px;
+					line-height: 1.4em;
+					font-weight: 100;
+					opacity: 1;
+				}
+			}
+		}
+	}
+	p.large{
+		text-align: center;
+		margin-bottom: 0;
 	}
 }
 
