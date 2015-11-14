@@ -28,7 +28,6 @@ section{
 	position: relative;
 	box-sizing: border-box;
 	width: 100%;
-	min-height: 100px;
 	.container{
 		display: block;
 		margin: auto;
@@ -41,6 +40,14 @@ section{
 		line-height: 1.3em;
 		font-weight: 100;
 		margin-bottom: 0.4em;
+		color: $hacktj-red;
+	}
+	&.red{
+		h1.section-title{
+			color: white;
+		}
+		background-color: $hacktj-red;
+		color: white;
 	}
 }
 
@@ -252,12 +259,13 @@ section.intro{
 	}
 }
 
+/************************************
+*	FAQ Section						*
+*************************************/
 section.faq{
 	.container{
 		max-width: 750px;
 	}
-	background-color: $hacktj-red;
-	color: white;
 	a{
 		display: inline-block;
 		color: white;
@@ -354,3 +362,20 @@ section.faq{
 	}
 }
 
+/************************************
+*	Sponsors Section				*
+*************************************/
+section.sponsors{
+}
+
+/************************************
+*	Schedule Section				*
+*************************************/
+section.schedule{
+}
+
+/************************************
+*	Map Section				*
+*************************************/
+section.map{
+}
