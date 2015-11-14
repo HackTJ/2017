@@ -3,12 +3,15 @@ $hacktj-red: #EA5C5C;
 
 $body-family: "Avenir Next", sans-serif;
 $header-family: "Roboto", sans-serif;
+// $body-family: sans-serif;
+// $header-family: serif;
 
 @import "concise/index";
 @import "icons/icons";
 @import "icons/helper";
 @import "icons/social/icons";
 @import "mixins";
+@import "fonts";
 
 body {
 	font-family: $body-family;
@@ -30,13 +33,14 @@ section{
 		display: block;
 		margin: auto;
 		max-width: 700px;
-		h1.section-title{
-			text-align: center;
-			font-size: 40px;
-			line-height: 1.3em;
-			font-weight: 100;
-			margin-bottom: 0.4em;
-		}
+	}
+	h1.section-title{
+		font-family: $header-family;
+		text-align: center;
+		font-size: 40px;
+		line-height: 1.3em;
+		font-weight: 100;
+		margin-bottom: 0.4em;
 	}
 }
 
@@ -148,6 +152,7 @@ p.large{
 	font-size: 20px;
 	font-weight: 100;
 	line-height: 1.7em;
+	margin-bottom: 0;
 }
 
 /************************************
@@ -346,7 +351,6 @@ section.faq{
 	}
 	p.large{
 		text-align: center;
-		margin-bottom: 0;
 	}
 }
 
