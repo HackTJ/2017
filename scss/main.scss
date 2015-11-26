@@ -197,7 +197,7 @@ p.large{
 ************************************/
 .line-container{
 	position: absolute;
-	background: purple;
+	background: none;
 	width: $line-width;
 	height: 100%;
 	z-index: 10;
@@ -232,15 +232,45 @@ p.large{
 	@include respond-to("mobile"){
 		display: none;
 	}
+
+	.animated-height{
+		background: #EA5C5C;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 0;
+		&.white{
+			background: #fff;
+		}
+	}
+
 }
 .horizontal-line-container{
+	position: relative;
 	width: 100%;
 	height: $line-width;
 	max-width: 800px;
 	margin: auto;
-	background-color: purple;
+	background: none;
 	@include respond-to("mobile"){
 		display: none;
+	}
+	.animated-width{
+		background: #EA5C5C;
+		position: absolute;
+		top: 0;
+		width: 0;
+		height: 100%;
+		&.white{
+			background: #fff;
+		}
+		&.right{
+			right: 0;
+		}
+		&.left{
+			left: 0;
+		}
 	}
 }
 
@@ -248,7 +278,8 @@ p.large{
 *	Hero Section					*
 *************************************/
 section.hero{
-	height: 100%;	
+	height: 90%;
+	min-height: 680px;	
 	padding-top: 5%;
 
 	// @include linear-gradient-image(#fff, #222, '../img/monticello.png');
@@ -535,7 +566,7 @@ section.map{
 		top: 0;
 		left: 0;
 	}
-	min-height: 50%;
+	min-height: 60%;
 	.line-container{
 		height: 50%;
 		left: calc(50% - 400px);

@@ -56,6 +56,90 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicGFuZHJpbmdhIiwiYSI6InVNam1fUG8ifQ.kTHtHlioue
 var map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'mapbox://styles/pandringa/cihfovl3k00nhrom4u9pjte7x', //stylesheet location
-    center: [-77.179, 38.819], // starting position
-    zoom: 13 // starting zoom
+    center: [-77.209, 38.819], // starting position
+    zoom: 12 // starting zoom
+  })
+  .addControl(new mapboxgl.Navigation({position: 'top-right'}))
+  .on('style.load', function () {
+    map.addSource("markers", {
+        "type": "geojson",
+        "data": {
+            "type": "FeatureCollection",
+            "features": [{
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-77.168323, 38.818086]
+                },
+                "properties": {
+                    "marker-symbol": "marker"
+                }
+            }]
+        }
+    });
+
+    map.addLayer({
+        "id": "markers",
+        "type": "symbol",
+        "source": "markers",
+        "layout": {
+            "icon-image": "{marker-symbol}-15",
+            "icon-size": 1.5
+        },
+        "paint": {
+            "text-size": 12
+        }
+    });
 });
+
+
+var controller = new ScrollMagic.Controller();
+var segments = document.querySelectorAll('.line-container, .horizontal-line-container'), i;
+
+var betaY = 3.5;
+var betaX = 4.5;
+
+var scrollDistance = 0;
+var animations = [];
+for (i = 0; i < segments.length; ++i) {
+  if(hasClass(segments[i], 'line-container')){
+    scrollDistance += segments[i].clientHeight;
+  } else if(hasClass(segments[i], 'horizontal-line-container')){
+    scrollDistance += segments[i].clientWidth;
+  }
+  animations.push(segments[i]);
+}
+
+var totalHeight = ((document.height !== undefined) ? document.height : document.body.offsetHeight) - window.innerHeight;
+var scrollFactor = totalHeight / scrollDistance;
+var y = window.innerHeight/2.5;
+animations.forEach(function(segment){
+  if( segment.childNodes[0] && !hasClass(segment, 'line-schedule')) {
+    var child = segment.childNodes[0];
+    var animateDuration = 0;
+    var animations = {ease: TweenMax.Linear};
+    if(hasClass(child, 'animated-height')){ 
+      animations.height = "100%"; 
+      animateDuration = segment.clientHeight * 1.2;
+    }
+    if(hasClass(child, 'animated-width')){ 
+      animations.width = "100%"; 
+      animateDuration = segment.clientWidth / 3.0;
+    }
+    animateDuration = animateDuration * scrollFactor;
+    
+    var scene = new ScrollMagic.Scene({offset: y, duration: animateDuration})
+      .setTween(segment.childNodes[0], animations)
+      // .addIndicators({name: "Y: "+y+" Duration: "+animateDuration})
+      .addTo(controller);
+
+    y = y + animateDuration;
+  } else if(hasClass(segment, 'line-schedule')) {
+    var scene = new ScrollMagic.Scene({triggerElement: segment, offset: -segment.clientWidth/2, duration: segment.clientWidth})
+      .setTween(segment.childNodes[0], {ease: TweenMax.Linear, width: "100%"})
+      // .addIndicators({name: "Y: "+segment.offsetY+" Duration: "+segment.clientWidth})
+      .addTo(controller);
+
+  }
+});
+

@@ -67,7 +67,7 @@ compiler.css = function() {
 compiler.js = function() {
 	console.log('Compiling JS...');
 	var deferred = when.defer();
-    gulp.src(['./js/_*.js', './js/*.js'])
+    gulp.src(['./js/__*.js', './js/_*.js', './js/*.js'])
         .pipe(concat('main.js'))
         .pipe(minifyJS())
         .pipe(gulp.dest('./out/js'))
