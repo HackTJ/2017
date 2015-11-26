@@ -51,3 +51,11 @@ var tabClick = function(e){
 	return false;
 }
 faqNav.addEventListener("click", tabClick);
+
+mapboxgl.accessToken = 'pk.eyJ1IjoicGFuZHJpbmdhIiwiYSI6InVNam1fUG8ifQ.kTHtHlioueaoXLCEqpNZlQ';
+var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/pandringa/cihfovl3k00nhrom4u9pjte7x', //stylesheet location
+    center: [-77.179, 38.819], // starting position
+    zoom: 13 // starting zoom
+});

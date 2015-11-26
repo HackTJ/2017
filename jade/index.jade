@@ -23,7 +23,7 @@ html(prefix="og: http://ogp.me/ns#")
 
 
 		link(rel="icon" type="image/png" href="/img/favicon.png")
-
+		link(rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.11.4/mapbox-gl.css")
 		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto:100,300,400", type="text/css")
 		link(rel='stylesheet', href='css/main.css', type='text/css')
 	body
@@ -40,6 +40,7 @@ html(prefix="og: http://ogp.me/ns#")
 							.text Remind Me!
 							.icon
 					.confirmation-text &nsbp;
+				.line-container.left.bottom
 		section.intro
 			.container
 				.line-container.left.top.extra-height
@@ -125,11 +126,60 @@ html(prefix="og: http://ogp.me/ns#")
 		.horizontal-line-container
 		section.schedule
 			.container
-				.line-container.top.left.extra-left.extra-height
+				.line-container.top.left.extra-height
 				h1.section-title Schedule
+				ul.day
+					.day-title
+						h3 Saturday, Feburary 6
+						.horizontal-line-container
+					li.item
+						h6.time 2:00PM
+						.description Registration Opens
+					li.item
+						h6.time 2:30 PM
+						.description Opening Ceremony
+					li.item
+						h6.time 3:30 PM
+						.description Hacking Begins
+					li.item
+						h6.time 6:30 PM
+						.description Dinner
+					li.item
+						h6.time 11:00 PM
+						.description Late-night snack
+				ul.day
+					.day-title
+						h3 Sunday, Feburary 7
+						.horizontal-line-container
+					li.item
+						h6.time 8:00 AM
+						.description Breakfast
+					li.item
+						h6.time 12:00 PM
+						.description Lunch
+					li.item
+						h6.time 3:00 PM
+						.description Hacking Ends
+					li.item
+						h6.time 3:30 PM
+						.description Expo starts
+					li.item
+						h6.time 4:30 PM
+						.description Presentations & Final Ceremony
+					li.item
+						h6.time 5:30 PM
+						.description End of HackTJ
 		section.red.map
-			.container
-				h1.section-title Getting There
-				
-
+			.map-container#map
+			.line-container.top.left.extra-left
+			.horizontal-line-container
+			.info-circle
+				.info-container
+					h6 TJHSST
+					.address 6560 Braddock Road
+					.address Alexandria, VA
+					a.button.small(href="https://www.google.com/maps/place/Thomas+Jefferson+High+School+for+Science+and+Technology/@38.8185004,-77.1708548,17z/data=!3m1!4b1!4m2!3m1!1s0x89b7b2e02877e895:0xc12f564af4d3bcab" target="_blank") 
+						.text Get directions
+						.icon.icon-caret-right
+	script(src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.11.4/mapbox-gl.js")
 	script(src="js/main.js" type="text/javascript")
