@@ -1,5 +1,6 @@
 $base-font-size: 14px;
 $hacktj-red: #EA5C5C;
+$blue-accent: #8CCBF7;
 $line-width: 7px;
 
 $body-family: "Avenir Next", sans-serif;
@@ -274,11 +275,29 @@ p.large{
 	}
 }
 
+.register-button-block{
+	display: block;
+	margin: 50px auto;
+	width: 500px;
+	.register-text{
+		font-size: 20px;
+		font-weight: 100;
+	}
+	.register-button{
+		width: 240px;
+		margin: 5px;
+		display: inline-block;
+		@include respond-to("mobile"){
+			width: 100%;
+		}
+	}
+}
+
 /************************************
 *	Hero Section					*
 *************************************/
 section.hero{
-	height: 90%;
+	height: 100%;
 	min-height: 680px;	
 	padding-top: 5%;
 
@@ -323,48 +342,9 @@ section.hero{
 		}
 	}
 
-	.interest-form{
-		margin-top: 10%;
-		margin-left: 5%;
-		margin-right: 5%;
-		.input-line{
-			margin-top: 10px;
-			overflow: hidden;
-			.contact{
-				width: 69%;
-				@include respond-to("mobile"){
-					display: block;
-					width: 100%;
-				}
-			}	
-			.submit{
-				width: 29%;
-				float: right;
-				@include respond-to("mobile"){
-					display: block;
-					width: 100%;
-					margin-top: 10px;
-				}
-			}
-		}
-	}
-	.confirmation-text{
-		display: block;
-		width: 100%;
-		text-align: center;
-		opacity: 0;
-		margin-top: 10px;
-		font-size: 20px;
-		font-weight: 400;
-		&.is-shown{
-			opacity: 1;
-		}
-		transition: opacity 0.5s;
-	}
-
 	.line-container.left{
 		height: 100px;
-		bottom: -110px;
+		bottom: -75px;
 		left: -50px;
 	}
 	.container{
@@ -606,6 +586,17 @@ section.map{
 				border-color: $hacktj-red;
 			}
 		}
-		transform: scale(0%, 0%);
+		transform: scale(0);
+	}
+}
+
+section.register{
+	padding: 5px;
+	.container{
+		margin: 20px auto;
+	}
+	button.register-button:hover{
+		background: white;
+		color: $hacktj-red;
 	}
 }

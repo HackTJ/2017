@@ -93,12 +93,9 @@ var map = new mapboxgl.Map({
 });
 
 
-var controller = new ScrollMagic.Controller();
-var segments = document.querySelectorAll('.line-container, .horizontal-line-container'), i;
-
-var betaY = 3.5;
-var betaX = 4.5;
-
+// ScrollMagic Code
+var scrollController = new ScrollMagic.Controller();
+var segments = document.querySelectorAll('.line-container, .horizontal-line-container');
 var scrollDistance = 0;
 var animations = [];
 for (i = 0; i < segments.length; ++i) {
@@ -109,15 +106,15 @@ for (i = 0; i < segments.length; ++i) {
   }
   animations.push(segments[i]);
 }
-
 var totalHeight = ((document.height !== undefined) ? document.height : document.body.offsetHeight) - window.innerHeight;
 var scrollFactor = totalHeight / scrollDistance;
+
 var y = window.innerHeight/2.5;
 animations.forEach(function(segment){
   if( segment.childNodes[0] && !hasClass(segment, 'line-schedule')) {
     var child = segment.childNodes[0];
     var animateDuration = 0;
-    var animations = {ease: TweenMax.Linear};
+    var animations = {ease: Linear.easeNone};
     if(hasClass(child, 'animated-height')){ 
       animations.height = "100%"; 
       animateDuration = segment.clientHeight * 1.2;
@@ -130,16 +127,21 @@ animations.forEach(function(segment){
     
     var scene = new ScrollMagic.Scene({offset: y, duration: animateDuration})
       .setTween(segment.childNodes[0], animations)
-      // .addIndicators({name: "Y: "+y+" Duration: "+animateDuration})
-      .addTo(controller);
+      .addTo(scrollController);
 
     y = y + animateDuration;
   } else if(hasClass(segment, 'line-schedule')) {
     var scene = new ScrollMagic.Scene({triggerElement: segment, offset: -segment.clientWidth/2, duration: segment.clientWidth})
-      .setTween(segment.childNodes[0], {ease: TweenMax.Linear, width: "100%"})
+      .setTween(segment.childNodes[0], {width: "100%"})
       // .addIndicators({name: "Y: "+segment.offsetY+" Duration: "+segment.clientWidth})
-      .addTo(controller);
+      .addTo(scrollController);
 
   }
 });
+var scene = new ScrollMagic.Scene({offset: y, duration: totalHeight-y})
+      .setTween('#map-info', {transform: "scale(1)"})
+      .addTo(scrollController)
+      .on('end', function(){
+        scrollController.destroy();
+      });
 
