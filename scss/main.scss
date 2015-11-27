@@ -193,6 +193,24 @@ p.large{
 	margin-bottom: 0;
 }
 
+.register-button{
+	overflow:hidden;
+	position: relative;
+	cursor: pointer;
+	.text{
+		cursor: pointer;
+	}
+	.nvite-button{
+		opacity: 0.0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100% !important;
+		height: 100% !important;
+	}
+}
+
 /************************************
 *	Animated Lines					*
 ************************************/

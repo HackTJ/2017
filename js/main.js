@@ -95,7 +95,6 @@ var map = new mapboxgl.Map({
 
 // ScrollMagic Code
 if(window.innerWidth > 640){
-  console.log('hi')
   var scrollController = new ScrollMagic.Controller();
   var segments = document.querySelectorAll('.animation-container');
   var scrollDistance = 0;
