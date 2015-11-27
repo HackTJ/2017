@@ -361,6 +361,7 @@ section.intro{
 *	FAQ Section						*
 *************************************/
 section.faq{
+	padding: 1px 0;
 	.container{
 		max-width: 800px;
 	}
@@ -455,10 +456,12 @@ section.faq{
 		text-align: center;
 	}
 	.animation-container.left{
-		height: 70px;
+		height: 110px;
+		margin-top: -41px;
 	}
 	.animation-container.right{
-		height: calc(100% - 70px);
+		height: calc(100% - 30px);
+		margin-bottom: -41px;
 	}
 }
 
