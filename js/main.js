@@ -94,54 +94,56 @@ var map = new mapboxgl.Map({
 
 
 // ScrollMagic Code
-var scrollController = new ScrollMagic.Controller();
-var segments = document.querySelectorAll('.line-container, .horizontal-line-container');
-var scrollDistance = 0;
-var animations = [];
-for (i = 0; i < segments.length; ++i) {
-  if(hasClass(segments[i], 'line-container')){
-    scrollDistance += segments[i].clientHeight;
-  } else if(hasClass(segments[i], 'horizontal-line-container')){
-    scrollDistance += segments[i].clientWidth;
+if(window.innerWidth > 640){
+  console.log('hi')
+  var scrollController = new ScrollMagic.Controller();
+  var segments = document.querySelectorAll('.animation-container');
+  var scrollDistance = 0;
+  var animations = [];
+  for (i = 0; i < segments.length; ++i) {
+    if(hasClass(segments[i], 'vertical')){
+      scrollDistance += segments[i].clientHeight;
+    } else if(hasClass(segments[i], 'horizontal')){
+      scrollDistance += segments[i].clientWidth;
+    }
+    animations.push(segments[i]);
   }
-  animations.push(segments[i]);
+  var totalHeight = ((document.height !== undefined) ? document.height : document.body.offsetHeight) - window.innerHeight;
+  var scrollFactor = totalHeight / scrollDistance;
+
+  var y = window.innerHeight/2.5;
+  animations.forEach(function(segment){
+    if( segment.childNodes[0] && !hasClass(segment, 'line-schedule')) {
+      var child = segment.childNodes[0];
+      var animateDuration = 0;
+      var animations = {ease: Linear.easeNone};
+      if(hasClass(segment, 'vertical')){ 
+        animations.height = "100%"; 
+        animateDuration = segment.clientHeight * 1.2;
+      }
+      if(hasClass(segment, 'horizontal')){ 
+        animations.width = "100%"; 
+        animateDuration = segment.clientWidth / 3.0;
+      }
+      animateDuration = animateDuration * scrollFactor;
+      
+      var scene = new ScrollMagic.Scene({offset: y, duration: animateDuration})
+        .setTween(segment.childNodes[0], animations)
+        .addTo(scrollController);
+
+      y = y + animateDuration;
+    } else if(hasClass(segment, 'line-schedule')) {
+      var scene = new ScrollMagic.Scene({triggerElement: segment, offset: -segment.clientWidth/2, duration: segment.clientWidth})
+        .setTween(segment.childNodes[0], {width: "100%"})
+        // .addIndicators({name: "Y: "+segment.offsetY+" Duration: "+segment.clientWidth})
+        .addTo(scrollController);
+
+    }
+  });
+  var scene = new ScrollMagic.Scene({offset: y, duration: totalHeight-y})
+        .setTween('#map-info', {transform: "scale(1)"})
+        .addTo(scrollController)
+        .on('end', function(){
+          scrollController.destroy();
+        });
 }
-var totalHeight = ((document.height !== undefined) ? document.height : document.body.offsetHeight) - window.innerHeight;
-var scrollFactor = totalHeight / scrollDistance;
-
-var y = window.innerHeight/2.5;
-animations.forEach(function(segment){
-  if( segment.childNodes[0] && !hasClass(segment, 'line-schedule')) {
-    var child = segment.childNodes[0];
-    var animateDuration = 0;
-    var animations = {ease: Linear.easeNone};
-    if(hasClass(child, 'animated-height')){ 
-      animations.height = "100%"; 
-      animateDuration = segment.clientHeight * 1.2;
-    }
-    if(hasClass(child, 'animated-width')){ 
-      animations.width = "100%"; 
-      animateDuration = segment.clientWidth / 3.0;
-    }
-    animateDuration = animateDuration * scrollFactor;
-    
-    var scene = new ScrollMagic.Scene({offset: y, duration: animateDuration})
-      .setTween(segment.childNodes[0], animations)
-      .addTo(scrollController);
-
-    y = y + animateDuration;
-  } else if(hasClass(segment, 'line-schedule')) {
-    var scene = new ScrollMagic.Scene({triggerElement: segment, offset: -segment.clientWidth/2, duration: segment.clientWidth})
-      .setTween(segment.childNodes[0], {width: "100%"})
-      // .addIndicators({name: "Y: "+segment.offsetY+" Duration: "+segment.clientWidth})
-      .addTo(scrollController);
-
-  }
-});
-var scene = new ScrollMagic.Scene({offset: y, duration: totalHeight-y})
-      .setTween('#map-info', {transform: "scale(1)"})
-      .addTo(scrollController)
-      .on('end', function(){
-        scrollController.destroy();
-      });
-

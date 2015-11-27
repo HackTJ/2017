@@ -196,12 +196,48 @@ p.large{
 /************************************
 *	Animated Lines					*
 ************************************/
-.line-container{
+.animation-container{
 	position: absolute;
 	background: none;
-	width: $line-width;
 	height: 100%;
 	z-index: 10;
+
+	.animated{
+		background: #EA5C5C;
+		position: absolute;
+		top: 0;
+		&.white{
+			background: #fff;
+		}
+	}
+
+	&.vertical{
+		height: 100%;
+		width: $line-width;
+		.animated{
+			left: 0;
+			width: 100%;
+			height: 0;
+		}
+	}
+	&.horizontal{
+		position: relative;
+		width: 100%;
+		height: $line-width;
+		max-width: 800px;
+		margin: auto;
+		.animated{
+			width: 0;
+			height: 100%;
+			&.right{
+			right: 0;
+			}
+			&.left{
+				left: 0;
+			}
+		}
+	}
+
 	&.extra-height{
 		height: calc(100% + 80px);
 		margin-top: -40px;
@@ -224,54 +260,9 @@ p.large{
 	&.bottom{
 		bottom: 0px;
 	}
-	&.red{
-		background: $hacktj-red;
-	}
-	&.white{
-		background: white;
-	}
+
 	@include respond-to("mobile"){
 		display: none;
-	}
-
-	.animated-height{
-		background: #EA5C5C;
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 0;
-		&.white{
-			background: #fff;
-		}
-	}
-
-}
-.horizontal-line-container{
-	position: relative;
-	width: 100%;
-	height: $line-width;
-	max-width: 800px;
-	margin: auto;
-	background: none;
-	@include respond-to("mobile"){
-		display: none;
-	}
-	.animated-width{
-		background: #EA5C5C;
-		position: absolute;
-		top: 0;
-		width: 0;
-		height: 100%;
-		&.white{
-			background: #fff;
-		}
-		&.right{
-			right: 0;
-		}
-		&.left{
-			left: 0;
-		}
 	}
 }
 
@@ -342,7 +333,7 @@ section.hero{
 		}
 	}
 
-	.line-container.left{
+	.animation-container.left{
 		height: 100px;
 		bottom: -75px;
 		left: -50px;
@@ -361,7 +352,7 @@ section.intro{
 	.container{
 		max-width: 650px;
 	}
-	.line-container.left{
+	.animation-container.left{
 		left: -75px;
 	}
 }
@@ -463,10 +454,10 @@ section.faq{
 	p.large{
 		text-align: center;
 	}
-	.line-container.left{
+	.animation-container.left{
 		height: 70px;
 	}
-	.line-container.right{
+	.animation-container.right{
 		height: calc(100% - 70px);
 	}
 }
@@ -547,16 +538,17 @@ section.map{
 		left: 0;
 	}
 	min-height: 60%;
-	.line-container{
+	.animation-container.vertical{
 		height: 50%;
 		left: calc(50% - 400px);
 		z-index: 10;
 	}
-	.horizontal-line-container{
+	.animation-container.horizontal{
 		position: absolute;
 		left: calc(50% - 400px);
+		right: auto;
 		top: 50%;
-		width: 100px;
+		width: 175px;
 		z-index: 10;
 	}
 	.info-circle{
@@ -584,6 +576,7 @@ section.map{
 				width: 60%;
 				margin-top: 10px;
 				border-color: $hacktj-red;
+				font-weight: normal;
 			}
 		}
 		transform: scale(0);
