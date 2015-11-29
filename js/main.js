@@ -22,6 +22,8 @@ function removeClass(el, className) {
   }
 }
 
+var isMobile = (window.innerWidth > 640);
+
 // FAQ Section
 var faqContainer = document.querySelector('.faq-container');
 var pageGroup = document.querySelector('ul.page-group');
@@ -56,7 +58,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicGFuZHJpbmdhIiwiYSI6InVNam1fUG8ifQ.kTHtHlioue
 var map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'mapbox://styles/pandringa/cihfovl3k00nhrom4u9pjte7x', //stylesheet location
-    center: [-77.209, 38.819], // starting position
+    center: isMobile ? [-77.209, 38.819] : [-77.189, 38.819], // starting position
     zoom: 12 // starting zoom
   })
   .addControl(new mapboxgl.Navigation({position: 'top-right'}))
@@ -94,7 +96,7 @@ var map = new mapboxgl.Map({
 
 
 // ScrollMagic Code
-if(window.innerWidth > 640){
+if(isMobile){
   var scrollController = new ScrollMagic.Controller();
   var segments = document.querySelectorAll('.animation-container');
   var scrollDistance = 0;

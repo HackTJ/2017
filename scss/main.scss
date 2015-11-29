@@ -21,6 +21,9 @@ body {
 	font-family: $body-family;
 	font-weight: 300;
 	color: #252525;
+	@include respond-to("mobile"){
+		overflow-x: hidden;
+	}
 }
 h1, h2, h3, h4, h5, h6{
 	font-family: $header-family;
@@ -40,6 +43,9 @@ section{
 		position: relative;
 		margin: 40px auto;
 		max-width: 700px;
+		@include respond-to("mobile"){
+			max-width: 100% !important;
+		}
 	}
 	h1.section-title{
 		font-family: $header-family;
@@ -208,6 +214,9 @@ p.large{
 		transform: translate(-50%, -50%);
 		width: 100% !important;
 		height: 100% !important;
+		@include respond-to("mobile"){
+			margin: 0;
+		}
 	}
 }
 
@@ -291,14 +300,25 @@ p.large{
 	.register-text{
 		font-size: 20px;
 		font-weight: 100;
+		width: 100%;
+		margin: auto;
+		display: block;
+		@include respond-to("mobile"){
+			margin-left: 10px;
+		}
 	}
 	.register-button{
 		width: 240px;
 		margin: 5px;
 		display: inline-block;
 		@include respond-to("mobile"){
-			width: 100%;
+			width: 90%;
+			margin: 10px auto;
+			display: block;
 		}
+	}
+	@include respond-to("mobile"){
+		width: 100%;
 	}
 }
 
@@ -369,6 +389,9 @@ section.hero{
 section.intro{
 	.container{
 		max-width: 650px;
+		@include respond-to("mobile"){
+			max-width: 90% !important;
+		}
 	}
 	.animation-container.left{
 		left: -75px;
@@ -394,6 +417,9 @@ section.faq{
 		padding: 10px 50px;
 		@include row();
 		margin: 0;
+		@include respond-to("mobile"){
+			padding: 10px;
+		}
 		.nav-item{
 			@include column(1/4);
 			color: #333;
@@ -422,6 +448,10 @@ section.faq{
 			bottom: 0;
 			left: 50px;
 			right: 50px;
+			@include respond-to("mobile"){
+				left: 5px;
+				right: 5px;
+			}
 			.underline{
 				position: absolute;
 				left: 0;
@@ -453,6 +483,9 @@ section.faq{
 			.question-group{
 				white-space:normal;
 				@include column(1/3);
+				@include respond-to("mobile"){
+					@include column(1);
+				}
 				.question{
 					font-family: $header-family;
 					display: block;
@@ -472,6 +505,11 @@ section.faq{
 	}
 	p.large{
 		text-align: center;
+		@include respond-to("mobile"){
+			max-width: 80%;
+			display: block;
+			margin: auto;
+		}
 	}
 	.animation-container.left{
 		height: 110px;
@@ -495,7 +533,16 @@ section.sponsors{
 		text-align: center;
 	}
 }
-
+.animation-container.horizontal.sponsors{
+	@include respond-to("mobile"){
+		display: block;
+	}
+	.animated.right{
+		@include respond-to("mobile"){
+			width: 100%;
+		}
+	}
+}
 /************************************
 *	Schedule Section				*
 *************************************/
@@ -520,7 +567,8 @@ section.schedule{
 			}
 			margin-bottom: 10px;
 			@include respond-to("mobile"){
-				max-width: 0;
+				max-width: 90%;
+				width: 90%
 			}
 		}
 		li.item{
@@ -528,20 +576,30 @@ section.schedule{
 			width: 20%;
 			min-width: 400px;
 			@include row();
+			@include respond-to("mobile"){
+				font-size: 1.2em;
+			}
 			h6.time{
 				display: inline-block;
 				color: $hacktj-red;
 				font-family: $body-family;
 				font-weight: 100;
 				@include column(1/4);
+				@include respond-to("mobile"){
+					@include column(1/3);
+				}
 			}
 			.description{
 				@include column(3/4);
 				padding-left: 0;
 				display: inline-block;
+				@include respond-to("mobile"){
+					@include column(2/3);
+				}
 			}
 			@include respond-to("mobile"){
 				width: 100%;
+				min-width: 0;
 			}
 		}
 	}
@@ -557,6 +615,11 @@ section.map{
 		height: 100%;
 		top: 0;
 		left: 0;
+		@include respond-to("mobile"){
+			position: relative;
+			width: 100%;
+			height: 60%;
+		}
 	}
 	min-height: 60%;
 	.animation-container.vertical{
@@ -601,8 +664,23 @@ section.map{
 			}
 		}
 		transform: scale(0);
+		@include respond-to("mobile"){
+			transform: none;
+			display: block;
+			position: relative;
+			top: 0;
+			left: 0;
+			width: 100%;
+			border-radius: 0;
+			.info-container{
+				h6, .address{
+					font-size: 1.3em;
+				}
+			}
+		}
 	}
 }
+
 
 section.register{
 	padding: 5px;
