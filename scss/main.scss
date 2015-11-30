@@ -303,6 +303,7 @@ p.large{
 		width: 100%;
 		margin: auto;
 		display: block;
+		text-align: center;
 		@include respond-to("mobile"){
 			margin-left: 10px;
 		}
