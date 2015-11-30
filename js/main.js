@@ -61,9 +61,6 @@ var map = new mapboxgl.Map({
     center: isMobile ? [-77.189, 38.819] : [-77.209, 38.819], // starting position
     zoom: 12 // starting zoom
   })
-  if(!isMobile){
-    map.addControl(new mapboxgl.Navigation({position: 'top-right'}))
-  }
   map.on('style.load', function () {
     map.addSource("markers", {
         "type": "geojson",
