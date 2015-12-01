@@ -1,6 +1,5 @@
 $base-font-size: 14px;
-$hacktj-red: #EA5C5C;
-$blue-accent: #8CCBF7;
+$hacktj-primary: #A1B6D5;
 $line-width: 7px;
 
 $body-family: "Avenir Next", sans-serif;
@@ -54,13 +53,13 @@ section{
 		line-height: 1.3em;
 		font-weight: 100;
 		margin-bottom: 0.4em;
-		color: $hacktj-red;
+		color: $hacktj-primary;
 	}
 	&.red{
 		h1.section-title{
 			color: white;
 		}
-		background-color: $hacktj-red;
+		background-color: $hacktj-primary;
 		color: white;
 	}
 }
@@ -122,11 +121,11 @@ label {
 }
 
 a{
-	color: $hacktj-red;
+	color: $hacktj-primary;
 	text-decoration: underline;
 	transition: color 0.3s;
 	&:hover{
-		color: lighten($hacktj-red, 10%)
+		color: lighten($hacktj-primary, 10%)
 	}
 }
 
@@ -180,8 +179,8 @@ button, .button {
 		}
 	}
 	&:hover{
-		background-color: $hacktj-red;
-		border-color: $hacktj-red;
+		background-color: $hacktj-primary;
+		border-color: $hacktj-primary;
 		.text{
 			color: white;
 		}
@@ -230,7 +229,7 @@ p.large{
 	z-index: 10;
 
 	.animated{
-		background: #EA5C5C;
+		background: $hacktj-primary;
 		position: absolute;
 		top: 0;
 		&.white{
@@ -438,7 +437,7 @@ section.faq{
 				weight: 100%;
 			}
 			&:hover, &.current{
-				color: $hacktj-red;
+				color: $hacktj-primary;
 			}
 			transform: color 0.3s;
 		}
@@ -457,7 +456,7 @@ section.faq{
 				position: absolute;
 				left: 0;
 				height: 100%;
-				background: $hacktj-red;
+				background: $hacktj-primary;
 				transition: left 0.5s;
 			}
 		}
@@ -556,7 +555,7 @@ section.schedule{
 		margin-bottom: 20px;
 		.day-title{
 			box-sizing: border-box;
-			color: $hacktj-red;
+			color: $hacktj-primary;
 			display: inline-block;
 			margin-left: -50px;
 			width: 50%;
@@ -582,7 +581,7 @@ section.schedule{
 			}
 			h6.time{
 				display: inline-block;
-				color: $hacktj-red;
+				color: $hacktj-primary;
 				font-family: $body-family;
 				font-weight: 100;
 				@include column(1/4);
@@ -644,7 +643,7 @@ section.map{
 		width: 250px;
 		height: 200px;
 		border-radius: 8px;
-		color: $hacktj-red;
+		color: $hacktj-primary;
 		background: white;
 		position: absolute;
 		z-index: 10;
@@ -664,7 +663,7 @@ section.map{
 			.button{
 				width: 60%;
 				margin-top: 10px;
-				border-color: $hacktj-red;
+				border-color: $hacktj-primary;
 				font-weight: normal;
 			}
 		}
@@ -694,6 +693,6 @@ section.register{
 	}
 	button.register-button:hover{
 		background: white;
-		color: $hacktj-red;
+		color: $hacktj-primary;
 	}
 }
