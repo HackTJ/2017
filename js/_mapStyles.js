@@ -85,7 +85,7 @@ window.hacktjMapStyles = [
         "elementType": "geometry",
         "stylers": [
             {
-                "lightness": "80"
+                "lightness": 30
             },
             {
                 "saturation": 30
@@ -211,7 +211,7 @@ window.hacktjMapStyles = [
         "elementType": "all",
         "stylers": [
             {
-                "lightness": -20
+                "lightness": "48"
             },
             {
                 "visibility": "simplified"
