@@ -528,6 +528,28 @@ section.sponsors{
 	.sponsor-container{
 		text-align: center;
 		min-height: 150px;
+		li.nvite-widget-entity{
+			margin: 15px;
+		}
+		img.nvite-widget-avatar{
+			border: none;
+			width: 75px;
+			height: 75px;
+		}
+		.nvite-context-sponsor{
+			p.nvite-tooltip {
+				span {
+					background-color: $hacktj-primary;
+					font-family: $body-family;
+				}
+				&:after{
+					border-top: 13px solid $hacktj-primary;
+				}
+			}
+		}
+		p.nvite-context-sponsor{
+			background-color: $hacktj-primary !important;
+		}
 	}
 	p.large{
 		text-align: center;
