@@ -54,45 +54,26 @@ var tabClick = function(e){
 }
 faqNav.addEventListener("click", tabClick);
 
-mapboxgl.accessToken = 'pk.eyJ1IjoicGFuZHJpbmdhIiwiYSI6InVNam1fUG8ifQ.kTHtHlioueaoXLCEqpNZlQ';
-var map = new mapboxgl.Map({
-    container: 'map', // container id
-    style: 'mapbox://styles/pandringa/cihfovl3k00nhrom4u9pjte7x', //stylesheet location
-    center: isMobile ? [-77.189, 38.819] : [-77.209, 38.819], // starting position
-    zoom: 12 // starting zoom
-  })
-  map.on('style.load', function () {
-    map.addSource("markers", {
-        "type": "geojson",
-        "data": {
-            "type": "FeatureCollection",
-            "features": [{
-                "type": "Feature",
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [-77.168323, 38.818086]
-                },
-                "properties": {
-                    "marker-symbol": "marker"
-                }
-            }]
-        }
-    });
+function initializeMap() {
+  var hacktjStyle = new google.maps.StyledMapType(window.hacktjMapStyles, {name: "HackTJ Website"});
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 12,
+    center: isMobile ? {lat: 38.819, lng: -77.189} : {lat: 38.819, lng: -77.209},
+    scrollwheel: false,
+    navigationControl: false,
+    mapTypeControl: false,
+    scaleControl: false,
+    draggable: false,
+  });
+  map.mapTypes.set('hacktj', hacktjStyle);
+  map.setMapTypeId('hacktj');
 
-    map.addLayer({
-        "id": "markers",
-        "type": "symbol",
-        "source": "markers",
-        "layout": {
-            "icon-image": "{marker-symbol}-15",
-            "icon-size": 1.5
-        },
-        "paint": {
-            "text-size": 12
-        }
-    });
-});
-
+  var marker = new google.maps.Marker({
+    position: {lat: 38.818086, lng: -77.168323},
+    map: map
+  });
+}
+google.maps.event.addDomListener(window, 'load', initializeMap);
 
 // ScrollMagic Code
 if(!isMobile){
