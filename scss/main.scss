@@ -1,5 +1,6 @@
 $base-font-size: 14px;
 $hacktj-primary: #A1B6D5;
+$text-color: #333333;
 $line-width: 7px;
 
 $body-family: "Avenir Next", sans-serif;
@@ -19,7 +20,7 @@ html{
 body {
 	font-family: $body-family;
 	font-weight: 300;
-	color: #252525;
+	color: $text-color;
 	@include respond-to("mobile"){
 		overflow-x: hidden;
 	}
@@ -409,101 +410,111 @@ section.intro{
 section.faq{
 	padding: 1px 0;
 	.container{
-		max-width: 800px;
+		max-width: 900px;
 	}
 	a{
 		color: white;
 	}
 	line-height: 1.3em;
-	.faq-nav{
-		width: 100%;
-		position: relative;
-		background: white;
-		padding: 10px 50px;
-		@include row();
-		margin: 0;
-		@include respond-to("mobile"){
-			padding: 10px;
-		}
-		.nav-item{
-			@include column(1/4);
-			color: #333;
-			cursor: pointer;
-			.icon{
-				display: block;
-				width: 100%;
-				text-align: center;
-				font-size: 40px;
-			}
-			.label{
-				display: block;
-				width: 100%;
-				text-align: center;
-				weight: 100%;
-			}
-			&:hover, &.current{
-				color: $hacktj-primary;
-			}
-			transform: color 0.3s;
-		}
-		.underline-container{
-			display: block;
-			height: 5px;
-			position: absolute;
-			bottom: 0;
-			left: 50px;
-			right: 50px;
-			@include respond-to("mobile"){
-				left: 5px;
-				right: 5px;
-			}
-			.underline{
-				position: absolute;
-				left: 0;
-				height: 100%;
-				background: $hacktj-primary;
-				transition: left 0.5s;
-			}
-		}
-	}
-	.faq-container{
+	ul.faq-container{
 		display: block;
 		position: relative;
 		overflow: hidden;
-		ul.page-group{
-			display: block;
-			position: relative;
-			margin: 0;
-			padding: 0;
-			list-style-type: none;
-			list-style: none;
-			white-space:nowrap;
-			transition: left 1s;
-		}
-		li.page{
-			padding: 25px;
-			padding-bottom: 0px;
-			display: inline-block;
+		font-size: 0;
+		margin-top: -20px;
+		.row{
+			margin-top: 20px;
 			@include row();
-			.question-group{
-				white-space:normal;
-				@include column(1/3);
-				@include respond-to("mobile"){
-					@include column(1);
-				}
+		}
+		li.question-group{
+			font-size: 1em;
+			white-space:normal;
+			@include column(1/3);
+			@include respond-to("mobile"){
+				@include column(1);
+			}
+			&.is-open{
 				.question{
-					font-family: $header-family;
-					display: block;
-					font-size: 22px;
-					text-align: center;
-					font-weight: 100;
+					.icon.icon-close{
+						opacity: 1;
+					}
+					.icon.icon-plus{
+						opacity: 0;
+						transform: rotate(-45deg) translate(41%, -34%);
+					}
+					&:hover{
+						color: #777;
+					}
 				}
-				.answer{
-					margin-top: 10px;
-					font-size: 15px;
-					line-height: 1.4em;
-					font-weight: 100;
-					opacity: 1;
+				&:hover{
+					color: #777;
+					.icon{
+						color: $hacktj-primary;
+					}
+				}
+			}
+			.question{
+				font-family: $header-family;
+				display: block;
+				position: relative;
+				font-size: 20px;
+				text-align: center;
+				font-weight: 100;
+				background-color: white;
+				color: #777;
+				text-align: left;
+				height: 56px;
+				line-height: 40px;
+				padding: 8px 16px;
+				padding-right: 60px;
+				&.small{
+					line-height: 1em;
+				}
+				cursor: pointer;
+				transition: color 0.5s;
+				.icon{
+					float: right;
+					display: block;
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					font-size: 26px;
+					right: 16px;
+					opacity: 0;
+					transition: opacity 0.5s, transform 0.5s;
+					&.icon-plus{
+						opacity: 1;
+					}
+					&.icon-close{
+						transform: translate(-55%, -50%)
+					}
+				}
+				&:hover{
+					color: $hacktj-primary;
+				}
+			}
+			.answer{
+				position: relative;
+				box-sizing: border-box;
+				&:before{
+					content: '';
+					display: block;
+					position: absolute;
+					left: 16px;
+					right: 16px;
+					top: 1px;
+					height: 2px;
+					background-color: $hacktj-primary;
+				}
+				font-size: 15px;
+				line-height: 1.4em;
+				font-weight: 100;
+				opacity: 1;
+				overflow: hidden;
+				background: white;
+				color: #777;
+				p{
+					margin: 16px;
 				}
 			}
 		}

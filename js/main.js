@@ -11,6 +11,7 @@ function addClass(el, className) {
   if (el.classList)
     el.classList.add(className)
   else if (!hasClass(el, className)) el.className += " " + className
+  return true;
 }
 function removeClass(el, className) {
   if (!el) return false;
@@ -20,39 +21,82 @@ function removeClass(el, className) {
     var reg = new RegExp('(\\s|^)' + className + '(\\s|$)')
     el.className=el.className.replace(reg, ' ')
   }
+  return false;
 }
+function toggleClass(el, className) {
+  if ( hasClass(el, className) )
+    return removeClass(el, className);
+  else 
+    return addClass(el, className);
+}
+function getParentWithClass(el, className) {
+  var parent = el.parentElement;
+  while(parent != null && !parent.classList.contains(className))
+    parent = parent.parentElement;
+  return parent;
+}
+function getSiblingWithClass(el, className) {
+  var sibling = el.nextElementSibling;
+  while(sibling != null && !sibling.classList.contains(className))
+    sibling = sibling.nextElementSibling;
+  return sibling;
+}
+
 
 var isMobile = (window.innerWidth < 640);
 
 // FAQ Section
-var faqContainer = document.querySelector('.faq-container');
-var pageGroup = document.querySelector('ul.page-group');
-var faqNav = document.querySelector('.faq-nav')
-var pages = Array.prototype.slice.call(document.querySelectorAll('.faq-container .page'));
-var tabs = document.querySelectorAll('.faq-nav .nav-item');
-var underline = document.querySelector('.underline');
-var tabWidth = tabs.item(0).clientWidth
-underline.style.width = tabWidth+"px"
+// var faqContainer = document.querySelector('.faq-container');
+// var pageGroup = document.querySelector('ul.page-group');
+// var faqNav = document.querySelector('.faq-nav')
+// var pages = Array.prototype.slice.call(document.querySelectorAll('.faq-container .page'));
+// var tabs = document.querySelectorAll('.faq-nav .nav-item');
+// var underline = document.querySelector('.underline');
+// var tabWidth = tabs.item(0).clientWidth
+// underline.style.width = tabWidth+"px"
 
-var tabClick = function(e){
-	var old = document.querySelector('.nav-item.current');
-	var t = e.target;
-	if(!hasClass(t, 'faq-nav')) {
-		while(!hasClass(t.parentElement, 'faq-nav')) {
-			t = t.parentElement;
-		}
-		var num = parseInt(t.getAttribute('num'));
+// var tabClick = function(e){
+// 	var old = document.querySelector('.nav-item.current');
+// 	var t = e.target;
+// 	if(!hasClass(t, 'faq-nav')) {
+// 		while(!hasClass(t.parentElement, 'faq-nav')) {
+// 			t = t.parentElement;
+// 		}
+// 		var num = parseInt(t.getAttribute('num'));
 		
-		pageGroup.style.left = '-'+num+'00%';
-		underline.style.left = num*tabWidth+'px';
+// 		pageGroup.style.left = '-'+num+'00%';
+// 		underline.style.left = num*tabWidth+'px';
 
 
-		removeClass(old, 'current');
-		addClass(t, 'current');
-	}
-	return false;
+// 		removeClass(old, 'current');
+// 		addClass(t, 'current');
+// 	}
+// 	return false;
+// }
+// faqNav.addEventListener("click", tabClick);
+var openQuestion = function(group, question, answer){
+  return function(e){
+    var isOpen = toggleClass(group, 'is-open');
+    var transitions = {};
+    if(isOpen){
+      transitions.height = answer.getAttribute('data-height');
+      transitions.ease = Power2.easeOut;
+    } else {
+      transitions.height = 0;
+      transitions.ease = Power2.easeOut;
+    }
+    console.log('tween', TweenMax.to);
+    TweenMax.to(answer, 0.5, transitions);
+  }
 }
-faqNav.addEventListener("click", tabClick);
+var questions = document.querySelectorAll('.question-group .question');
+for(var i=0; i<questions.length; i++){
+  var group = getParentWithClass(questions[i], 'question-group');
+  var answer = getSiblingWithClass(questions[i], 'answer')
+  answer.setAttribute("data-height", answer.clientHeight);
+  answer.style.height = "0";
+  group.addEventListener("click", openQuestion(group, questions[i], answer))
+}
 
 function initializeMap() {
   var hacktjStyle = new google.maps.StyledMapType(window.hacktjMapStyles, {name: "HackTJ Website"});

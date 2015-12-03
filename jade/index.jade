@@ -49,75 +49,80 @@ html(prefix="og: http://ogp.me/ns#")
 
 		section.red.faq
 			.container
-				.animation-container.vertical.left.top
-					.animated.white
-				.animation-container.vertical.right.bottom
-					.animated.white
+				//- .animation-container.vertical.left.top
+				//- 	.animated.white
+				//- .animation-container.vertical.right.bottom
+				//- 	.animated.white
 				h1.section-title FAQ
-				nav.faq-nav
-					.nav-item.current(num="0")
-						.icon.icon-help1
-						.label Basics
-					.nav-item(num="1")
-						//- .icon.icon-drawer
-						.icon.icon-note2
-						.label Registration
-					.nav-item(num="2")
-						.icon.icon-tools
-						//- .icon.icon-share
-						//- .icon.icon-diskette
-						.label Hacking
-					.nav-item(num="3")
-						.icon.icon-portfolio
-						.label Supplies
-					.underline-container
-						.underline
-				.faq-container
-					ul.page-group
-						//- General Questions
-						li.page
-							.question-group
-								h3.question What is HackTJ?
-								p.answer HackTJ is a student-run hackathon at TJHSST, where you will have 24 hours to learn how to code and/or work with your friends to make your idea come to life.
-							.question-group
-								h3.question When is HackTJ?
-								p.answer HackTJ will start on Saturday, February 6 and run until Sunday, February 7. If you need to arrive late or leave early, please <a href="mailto:hello@hacktj.org">let us know</a> ahead of time.
-							.question-group
-								h3.question Who can attend?
-								p.answer HackTJ is open to any and all current high school students. If you're not a high school student but would like to attend, consider coming <a href="" onclick="return false;">as a mentor</a>.
-						//- Registration Questions
-						li.page
-							.question-group
-								h3.question How much will it cost?
-								p.answer HackTJ is just $10 for students (less than a movie ticket!) but if you're unable to afford that, please <a href="mailto:hello@hacktj.org">email us</a> and we'll help make it work for you.
-							.question-group
-								h3.question Can I get a refund?
-								p.answer Certainly. If you're no longer able to attend and want a refund, <a href="mailto:hello@hacktj.org">email us</a> before February 1st and we'll help you out.
-							.question-group
-								h3.question Can I pay in cash?
-								p.answer If you're a TJ student we can accept cash for your registration, just <a href="mailto:hello@hacktj.org">send us an email</a> and we'll give you more info. All non-TJ students must pay through our website.
-						//- Hacking Questions
-						li.page
-							.question-group
-								h3.question Isn't hacking illegal?
-								p.answer In the context of a hackathon, "hacking" is to build a real application over the length of the event. It's important to not confuse this with illegal hacking, which is gaining unauthorized access to a computer. 
-							.question-group
-								h3.question Do I need a team?
-								p.answer If you already have a team of 2-4 people you want to work with, that's awesome! If not don't worry because we'll have an opportunity for people to join a team if they need one.
-							.question-group
-								h3.question What if I don't know how to code?
-								p.answer Come to HackTJ! Coding is fun, creative, and an important skill, and HackTJ is the perfect way to learn. We'll have workshops and mentors to help guide you. 
-						//- Food and supplies questions
-						li.page
-							.question-group
-								h3.question What should I bring?
-								p.answer You'll need to bring your laptop, phone, chargers, a sleeping bag/pillow, toiletries, and extra clothing. We suggest you bring a set of nice clothes for demos; you'll want to make the best impression.
-							.question-group
-								h3.question Will there be food?
-								p.answer Yes. Lots and lots of food.
-							.question-group
-								h3.question What if I have dietary concerns?
-								p.answer We'll be providing meals for most everyone at HackTJ, but if you have special concerns please <a href="mailto:hello@hacktj.org">let us know</a>.
+				ul.faq-container
+					//- General Questions
+					.row
+						li.question-group
+							h3.question What is HackTJ?
+								.icon.icon-plus
+								.icon.icon-close
+							.answer: p HackTJ is a student-run hackathon at TJHSST, where you will have 24 hours to learn how to code and/or work with your friends to make your idea come to life.
+						li.question-group
+							h3.question When is HackTJ?
+								.icon.icon-plus
+								.icon.icon-close
+							.answer: p HackTJ will start on Saturday, February 6 and run until Sunday, February 7. If you need to arrive late or leave early, please <a href="mailto:hello@hacktj.org">let us know</a> ahead of time.
+						li.question-group
+							h3.question Who can attend?
+								.icon.icon-plus
+								.icon.icon-close
+							.answer: p HackTJ is open to any and all current high school students. If you're not a high school student but would like to attend, consider coming <a href="" onclick="return false;">as a mentor</a>.
+					//- Registration Questions
+					.row
+						li.question-group
+							h3.question Is there any cost?
+								.icon.icon-plus
+								.icon.icon-close
+							.answer: p Nope! HackTJ is completely free!
+						li.question-group
+							h3.question Can I get a refund?
+								.icon.icon-plus
+								.icon.icon-close
+							.answer: p Certainly. If you're no longer able to attend and want a refund, <a href="mailto:hello@hacktj.org">email us</a> before February 1st and we'll help you out.
+						li.question-group
+							h3.question Can I pay in cash?
+								.icon.icon-plus
+								.icon.icon-close
+							.answer: p If you're a TJ student we can accept cash for your registration, just <a href="mailto:hello@hacktj.org">send us an email</a> and we'll give you more info. All non-TJ students must pay through our website.
+					//- Hacking Questions
+					.row
+						li.question-group
+							h3.question Isn't hacking illegal?
+								.icon.icon-plus
+								.icon.icon-close
+							.answer: p In the context of a hackathon, "hacking" is to build a real application over the length of the event. It's important to not confuse this with illegal hacking, which is gaining unauthorized access to a computer. 
+						li.question-group
+							h3.question Do I need a team?
+								.icon.icon-plus
+								.icon.icon-close
+							.answer: p If you already have a team of 2-4 people you want to work with, that's awesome! If not don't worry because we'll have an opportunity for people to join a team if they need one.
+						li.question-group
+							h3.question.small What if I don't know how to code?
+								.icon.icon-plus
+								.icon.icon-close
+							.answer: p Come to HackTJ! Coding is fun, creative, and an important skill, and HackTJ is the perfect way to learn. We'll have workshops and mentors to help guide you. 
+					//- Food and supplies questions
+					.row
+						li.question-group
+							h3.question What should I bring?
+								.icon.icon-plus
+								.icon.icon-close
+							.answer: p You'll need to bring your laptop, phone, chargers, a sleeping bag/pillow, toiletries, and extra clothing. We suggest you bring a set of nice clothes for demos; you'll want to make the best impression.
+						li.question-group
+							h3.question Will there be food?
+								.icon.icon-plus
+								.icon.icon-close
+							.answer: p Yes. Lots and lots of food.
+						li.question-group
+							h3.question.small What if I have dietary concerns?
+								.icon.icon-plus
+								.icon.icon-close
+							.answer: p We'll be providing meals for most everyone at HackTJ, but if you have special concerns please <a href="mailto:hello@hacktj.org">let us know</a>.
 				p.large If your question isn't answered here, just ask us: <a href="mailto:hello@hacktj.org">hello@hacktj.org</a>.
 		section.sponsors
 			.container
