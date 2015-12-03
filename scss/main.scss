@@ -413,7 +413,7 @@ section.faq{
 		max-width: 800px;
 	}
 	a{
-		color: $hacktj-primary;
+		color: white;
 	}
 	line-height: 1.3em;
 	ul.faq-container{
@@ -515,6 +515,9 @@ section.faq{
 				color: #777;
 				p{
 					margin: 16px;
+				}
+				a{
+					color: $hacktj-primary;
 				}
 			}
 		}
