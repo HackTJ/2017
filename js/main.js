@@ -153,7 +153,7 @@ if(!isMobile){
       }
       if(hasClass(segment, 'horizontal')){ 
         animations.width = "100%"; 
-        animateDuration = segment.clientWidth / 3.0;
+        animateDuration = segment.clientWidth / 2.0;
       }
       animateDuration = animateDuration * scrollFactor;
       
