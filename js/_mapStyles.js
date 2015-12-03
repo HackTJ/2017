@@ -5,6 +5,9 @@ window.hacktjMapStyles = [
         "stylers": [
             {
                 "color": "#a1b6d5"
+            },
+            {
+                "lightness": "42"
             }
         ]
     },
@@ -136,13 +139,19 @@ window.hacktjMapStyles = [
         "elementType": "geometry",
         "stylers": [
             {
-                "lightness": 10
+                "lightness": "27"
             },
             {
-                "saturation": -30
+                "saturation": "0"
             },
             {
-                "color": "#ffffff"
+                "hue": "#0067ff"
+            },
+            {
+                "gamma": "4.62"
+            },
+            {
+                "weight": "1.02"
             }
         ]
     },
@@ -166,7 +175,28 @@ window.hacktjMapStyles = [
         "elementType": "labels",
         "stylers": [
             {
-                "weight": "0.01"
+                "weight": "3.28"
+            },
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "all",
+        "stylers": [
+            {
+                "weight": "1.02"
+            },
+            {
+                "saturation": "1"
+            },
+            {
+                "hue": "#0067ff"
+            },
+            {
+                "gamma": "0.41"
             }
         ]
     },
@@ -184,6 +214,21 @@ window.hacktjMapStyles = [
     },
     {
         "featureType": "road.arterial",
+        "elementType": "all",
+        "stylers": [
+            {
+                "lightness": "0"
+            },
+            {
+                "gamma": "1.77"
+            },
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
         "elementType": "labels",
         "stylers": [
             {
@@ -194,6 +239,9 @@ window.hacktjMapStyles = [
             },
             {
                 "weight": "0.01"
+            },
+            {
+                "lightness": "0"
             }
         ]
     },
@@ -203,6 +251,12 @@ window.hacktjMapStyles = [
         "stylers": [
             {
                 "visibility": "off"
+            },
+            {
+                "saturation": "0"
+            },
+            {
+                "lightness": "76"
             }
         ]
     },

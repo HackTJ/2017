@@ -41,6 +41,11 @@ function getSiblingWithClass(el, className) {
     sibling = sibling.nextElementSibling;
   return sibling;
 }
+function getChildWithClass(el, className) {
+  var children = el.childNodes;
+  for(var i=0; i<children.length; i++)
+    if(children[i].classList && children[i].classList.contains(className)) return children[i];
+}
 
 
 var isMobile = (window.innerWidth < 640);
@@ -74,7 +79,7 @@ var isMobile = (window.innerWidth < 640);
 // 	return false;
 // }
 // faqNav.addEventListener("click", tabClick);
-var openQuestion = function(group, question, answer){
+var openQuestion = function(group, question, answer, tween){
   return function(e){
     var isOpen = toggleClass(group, 'is-open');
     var transitions = {};
@@ -92,7 +97,7 @@ var openQuestion = function(group, question, answer){
 var questions = document.querySelectorAll('.question-group .question');
 for(var i=0; i<questions.length; i++){
   var group = getParentWithClass(questions[i], 'question-group');
-  var answer = getSiblingWithClass(questions[i], 'answer')
+  var answer = getSiblingWithClass(questions[i], 'answer');
   answer.setAttribute("data-height", answer.clientHeight);
   answer.style.height = "0";
   group.addEventListener("click", openQuestion(group, questions[i], answer))

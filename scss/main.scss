@@ -438,7 +438,7 @@ section.faq{
 		margin-top: -20px;
 		.row{
 			margin-top: 20px;
-			padding: 0 20px;
+			padding: 0 30px;
 			@include row();
 		}
 		li.question-group{
@@ -496,7 +496,7 @@ section.faq{
 					font-size: 26px;
 					right: 16px;
 					opacity: 0;
-					transition: opacity 0.5s, transform 0.5s;
+					transition: transform 0.4s, opacity 0.4s;
 					&.icon-plus{
 						opacity: 1;
 					}
@@ -553,7 +553,7 @@ section.faq{
 		margin-top: -41px;
 	}
 	.animation-container.right{
-		height: calc(100% + 10px);
+		height: calc(100% + 11px);
 		margin-bottom: -40px;
 	}
 }
