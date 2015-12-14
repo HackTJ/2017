@@ -337,8 +337,9 @@ section.hero{
 	padding-top: 5%;
 
 	// @include linear-gradient-image(#fff, #222, '../img/monticello.png');
-	background-image: url(../img/monticello-gradient-blur.jpg);
+	background-image: url(../img/dome-background.png);
 	background-size: cover;
+	background-position: center top;
 
 	font-family: $header-family;
 	color: white;
@@ -428,6 +429,10 @@ section.faq{
 		.section-title{
 			margin: 0 20px;
 			width: 200px;
+			@include respond-to("mobile"){
+				width: 100%;
+				margin-bottom: 30px;
+			}
 		}
 	}
 	ul.faq-container{
@@ -439,6 +444,9 @@ section.faq{
 			margin-top: 20px;
 			padding: 0 30px;
 			@include row();
+			@include respond-to("mobile"){
+				margin: 0;
+			}
 		}
 		li.question-group{
 			font-size: 1em;
@@ -446,6 +454,7 @@ section.faq{
 			@include column(1/3);
 			@include respond-to("mobile"){
 				@include column(1);
+				margin: 10px 0;
 			}
 			&.is-open{
 				.question{
@@ -483,6 +492,11 @@ section.faq{
 				padding-right: 40px;
 				&.small{
 					line-height: 1em;
+					&.not-mobile{
+						@include respond-to("mobile"){
+							line-height: 40px;
+						}
+					}
 				}
 				cursor: pointer;
 				transition: color 0.5s;
@@ -594,6 +608,8 @@ section.sponsors{
 .animation-container.horizontal.sponsors{
 	@include respond-to("mobile"){
 		display: block;
+		left:-25px;
+		width: calc(100% + 25px);
 	}
 	max-width: 850px;
 	left: 25px;
