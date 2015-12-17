@@ -35,8 +35,15 @@ html(prefix="og: http://ogp.me/ns#")
 				img.logo(src="img/logo.png" alt="HackTJ")
 				.event-date February 6th-7th, 2016
 				.event-location Thomas Jefferson High School for Science and Technology
-				.register-button-block
-					.register-text Stay tuned: registration opens soon!
+				.register-button-block.pre-register#form1
+					.interest-form
+						label.form-text Want to attend or mentor? Get notified when registration opens.
+						.input-line
+							input.contact(type="text" placeholder="Email Address or Phone #")
+							button.submit.is-disabled(type="button") 
+								.text Remind Me!
+								.icon
+						.confirmation-text &nsbp;
 					//- .register-text Want to come? Registration is now open!
 					//- button.register-button Register as a Student
 					//- 	script(async src="//widgets.nvite.com/1.1/button.js" data-resource="hacktjstudents" data-class="nvite-button")
@@ -204,8 +211,15 @@ html(prefix="og: http://ogp.me/ns#")
 						.icon.icon-caret-right
 		section.red.register
 			.container
-				.register-button-block
-					.register-text Stay tuned: registration opens soon!
+				.register-button-block.bottom.pre-register#form2
+					.interest-form
+						label.form-text Want to attend or mentor? Get notified when registration opens.
+						.input-line
+							input.contact(type="text" placeholder="Email Address or Phone #")
+							button.submit.is-disabled(type="button") 
+								.text Remind Me!
+								.icon
+						.confirmation-text &nsbp;
 					//- .register-text Want to come? Registration is now open!
 					//- button.register-button Register as a Student
 					//- 	script(async src="//widgets.nvite.com/1.1/button.js" data-resource="hacktjstudents" data-class="nvite-button")
