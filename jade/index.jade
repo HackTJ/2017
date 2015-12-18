@@ -28,6 +28,9 @@ html(prefix="og: http://ogp.me/ns#")
 		link(rel='stylesheet', href='css/main.css', type='text/css')
 	body
 		section.hero
+			a#mlh-trust-badge(href='https://mlh.io/?utm_campaign=Trust%20Badge', target='_blank')
+				img(src='https://s3.amazonaws.com/logged-assets/trust-badge/s2016.png', alt='MLH Official - Spring 2016', style='width:100%;')
+
 			.container
 				//- video.background(autoplay poster="video/screenshot.png")
 				//- 	source(src="video/bkg.mp4" type="video/mp4")
@@ -35,20 +38,20 @@ html(prefix="og: http://ogp.me/ns#")
 				img.logo(src="img/logo.png" alt="HackTJ")
 				.event-date February 6th-7th, 2016
 				.event-location Thomas Jefferson High School for Science and Technology
-				.register-button-block.pre-register#form1
-					.interest-form
-						label.form-text Want to attend or mentor? Get notified when registration opens.
-						.input-line
-							input.contact(type="text" placeholder="Email Address or Phone #")
-							button.submit.is-disabled(type="button") 
-								.text Remind Me!
-								.icon
-						.confirmation-text &nsbp;
-					//- .register-text Want to come? Registration is now open!
-					//- button.register-button Register as a Student
-					//- 	script(async src="//widgets.nvite.com/1.1/button.js" data-resource="hacktjstudents" data-class="nvite-button")
-					//- button.register-button Register as a Mentor
-					//- 	script(async src="//widgets.nvite.com/1.1/button.js" data-resource="hacktjmentors" data-class="nvite-button")
+				.register-button-block
+					//- .interest-form
+					//- 	label.form-text Want to attend or mentor? Get notified when registration opens.
+					//- 	.input-line
+					//- 		input.contact(type="text" placeholder="Email Address or Phone #")
+					//- 		button.submit.is-disabled(type="button") 
+					//- 			.text Remind Me!
+					//- 			.icon
+					//- 	.confirmation-text &nsbp;
+					.register-text Want to come? Registration is now open!
+					button.register-button Register as a Student
+						script(async src="//widgets.nvite.com/1.1/button.js" data-resource="hacktjstudents" data-class="nvite-button")
+					button.register-button Register as a Mentor
+						script(async src="//widgets.nvite.com/1.1/button.js" data-resource="hacktjmentorvolunteers" data-class="nvite-button")
 		section.intro
 			.container
 				.animation-container.vertical.left.top.extra-height#trigger
@@ -96,10 +99,10 @@ html(prefix="og: http://ogp.me/ns#")
 								.icon.icon-close
 							.answer: p Yes. Registration will be closed on Feburary 1st, but don't worry about that – go ahead and register now!
 						li.question-group
-							h3.question Can I bring friends?
+							h3.question.small Do you have a code of conduct?
 								.icon.icon-plus
 								.icon.icon-close
-							.answer: p Yes!! Bring all your friends!
+							.answer: p Yes, good question! We have adopted the <a href="http://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank">MLH code of conduct</a>, which all attendees will be required to adhere to. 
 					//- Hacking Questions
 					.row
 						li.question-group
@@ -143,8 +146,15 @@ html(prefix="og: http://ogp.me/ns#")
 					.animated
 				h1.section-title Sponsors
 				.sponsor-container
-					script(async src="//widgets.nvite.com/1.1/cards.js" data-resource="hacktjmentors/sponsors")
+					script(async src="//widgets.nvite.com/1.1/cards.js" data-resource="hacktjmentorvolunteers/sponsors")
+				h1.section-title Partners
+				.sponsor-container
+					a(href="https://mlh.io" target="_blank")
+						img.partner-image(src="img/mlh.png")
+					a(href="https://tjclc.wordpress.com" target="_blank")
+						img.partner-image(src="img/clc.png")
 				p.large Interested in sponsoring? Email us at <a href="mailto:sponsor@hacktj.org">sponsor@hacktj.org</a>.
+
 		.animation-container.horizontal.sponsors
 			.animated.right
 		section.schedule
@@ -212,19 +222,19 @@ html(prefix="og: http://ogp.me/ns#")
 						.icon.icon-caret-right
 		section.red.register
 			.container
-				.register-button-block.bottom.pre-register#form2
-					.interest-form
-						label.form-text Want to attend or mentor? Get notified when registration opens.
-						.input-line
-							input.contact(type="text" placeholder="Email Address or Phone #")
-							button.submit.is-disabled(type="button") 
-								.text Remind Me!
-								.icon
-						.confirmation-text &nsbp;
-					//- .register-text Want to come? Registration is now open!
-					//- button.register-button Register as a Student
-					//- 	script(async src="//widgets.nvite.com/1.1/button.js" data-resource="hacktjstudents" data-class="nvite-button")
-					//- button.register-button Register as a Mentor
-					//- 	script(async src="//widgets.nvite.com/1.1/button.js" data-resource="hacktjmentors" data-class="nvite-button")
+				.register-button-block.bottom
+					//- .interest-form
+					//- 	label.form-text Want to attend or mentor? Get notified when registration opens.
+					//- 	.input-line
+					//- 		input.contact(type="text" placeholder="Email Address or Phone #")
+					//- 		button.submit.is-disabled(type="button") 
+					//- 			.text Remind Me!
+					//- 			.icon
+					//- 	.confirmation-text &nsbp;
+					.register-text Want to come? Registration is now open!
+					button.register-button Register as a Student
+						script(async src="//widgets.nvite.com/1.1/button.js" data-resource="hacktjstudents" data-class="nvite-button")
+					button.register-button Register as a Mentor
+						script(async src="//widgets.nvite.com/1.1/button.js" data-resource="hacktjmentorvolunteers" data-class="nvite-button")
 	script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWS7s6JVHNo0slACpRH7HR4HRWAWy78Do")
 	script(src="js/main.js" type="text/javascript")
