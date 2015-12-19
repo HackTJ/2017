@@ -646,6 +646,9 @@ section.sponsors{
 			.nvite-card-header img{
 				margin-left: -40px;
 			}
+			.nvite-widget-card-overlay.nvite-visible{
+				cursor: pointer;
+			}
 		}
 		img.nvite-widget-avatar{
 			border: none;
@@ -661,6 +664,9 @@ section.sponsors{
 				span {
 					background-color: $hacktj-primary;
 					font-family: $body-family;
+					small{
+						display: none;
+					}
 				}
 				&:after{
 					border-top: 13px solid $hacktj-primary;
@@ -668,7 +674,7 @@ section.sponsors{
 			}
 		}
 		p.nvite-context-sponsor{
-			background-color: $hacktj-primary !important;
+			display: none;
 		}
 	}
 	p.large{
