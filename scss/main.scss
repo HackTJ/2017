@@ -643,6 +643,9 @@ section.sponsors{
 			width: auto;
 			height: auto;
 			vertical-align: middle;
+			.nvite-card-header img{
+				margin-left: -40px;
+			}
 		}
 		img.nvite-widget-avatar{
 			border: none;
