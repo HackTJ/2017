@@ -148,3 +148,25 @@ if(!isMobile){
           scrollController.destroy();
         });
 }
+
+var sponsorSmallImages = {
+  "Ntrepid Corporation": "img/sponsor-logos-small/ntrepid.png",
+  "Universal Consulting Services": "img/sponsor-logos-small/ucs.png",
+  "Pebble": "img/sponsor-logos-small/pebble.png"
+}
+function setImages(count){
+  setTimeout(function(){
+    var popups = document.getElementsByClassName("nvite-card-name");
+    var images = Array.prototype.map.call(popups, function(popup){
+      var img = Array.prototype.filter.call(popup.parentNode.childNodes, function(sibling){
+        return sibling.nodeName === 'IMG';
+      })[0];
+      img.setAttribute('src', sponsorSmallImages[popup.textContent]);
+      return img;
+    });
+    if(images.length == 0 && count < 10){
+      setImages(count+1);
+    }
+  }, 500);
+}
+setImages(0);
