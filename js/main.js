@@ -156,16 +156,20 @@ var sponsorSmallImages = {
   "Coding Lady Colonials": "img/sponsor-logos-small/clc.png"
 }
 function setImages(count){
+  var doneImages = [];
   setTimeout(function(){
     var popups = document.getElementsByClassName("nvite-card-name");
     var images = Array.prototype.map.call(popups, function(popup){
-      var img = Array.prototype.filter.call(popup.parentNode.childNodes, function(sibling){
-        return sibling.nodeName === 'IMG';
-      })[0];
-      img.setAttribute('src', sponsorSmallImages[popup.textContent]);
+      if(doneImages.indexOf(popup.textContent) == -1){
+        var img = Array.prototype.filter.call(popup.parentNode.childNodes, function(sibling){
+          return sibling.nodeName === 'IMG';
+        })[0];
+        img.setAttribute('src', sponsorSmallImages[popup.textContent]);
+        doneImages.push(popup.textContent);
+      }
       return img;
     });
-    if(images.length == 0 && count < 10){
+    if(doneImages.length < Object.keys(sponsorSmallImages).length  && count < 10){
       setImages(count+1);
     }
   }, 500);
