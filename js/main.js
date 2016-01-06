@@ -153,7 +153,8 @@ var sponsorSmallImages = {
   "Ntrepid Corporation": "img/sponsor-logos-small/ntrepid.png",
   "Universal Consulting Services": "img/sponsor-logos-small/ucs.png",
   "Pebble": "img/sponsor-logos-small/pebble.png",
-  "Coding Lady Colonials": "img/sponsor-logos-small/clc.png"
+  "Coding Lady Colonials": "img/sponsor-logos-small/clc.png",
+  "Major League Hacking": "img/sponsor-logos-small/mlh.png"
 }
 function setImages(count){
   var doneImages = [];
