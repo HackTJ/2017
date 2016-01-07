@@ -154,7 +154,8 @@ var sponsorSmallImages = {
   "Universal Consulting Services": "img/sponsor-logos-small/ucs.png",
   "Pebble": "img/sponsor-logos-small/pebble.png",
   "Coding Lady Colonials": "img/sponsor-logos-small/clc.png",
-  "Major League Hacking": "img/sponsor-logos-small/mlh.png"
+  "Major League Hacking": "img/sponsor-logos-small/mlh.png",
+  "Yext": "img/sponsor-logos-small/yext.png"
 }
 function setImages(count){
   var doneImages = [];
