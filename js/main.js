@@ -171,7 +171,8 @@ var sponsorSmallImages = {
   "Pebble": "img/sponsor-logos-small/pebble.png",
   "Coding Lady Colonials": "img/sponsor-logos-small/clc.png",
   "Major League Hacking": "img/sponsor-logos-small/mlh.png",
-  "Yext": "img/sponsor-logos-small/yext.png"
+  "Yext": "img/sponsor-logos-small/yext.png",
+  "Capital One": "img/sponsor-logos-small/capone.png"
 }
 function setImages(count){
   var doneImages = [];
