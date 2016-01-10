@@ -47,6 +47,22 @@ function getChildWithClass(el, className) {
     if(children[i].classList && children[i].classList.contains(className)) return children[i];
 }
 
+if(navigator.userAgent.toLowerCase().indexOf('firefox') > -1)
+{
+  function setButtonListeners(container){
+    document.querySelector(container+" .register-button.student")
+    .addEventListener("click", function(evt){
+      window.location = "https://nvite.com/HackTJ/hacktjstudents/tickets"
+    });
+    document.querySelector(container+" .register-button.mentor")
+    .addEventListener("click", function(evt){
+      window.location = "https://nvite.com/HackTJ/hacktjmentorvolunteers/tickets"
+    });
+  }
+  setButtonListeners(".register-button-block.top")
+  setButtonListeners(".register-button-block.bottom")
+}
+
 
 var isMobile = (window.innerWidth < 640);
 

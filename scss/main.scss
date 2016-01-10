@@ -506,6 +506,7 @@ section.faq{
 		li.question-group{
 			font-size: 1em;
 			white-space:normal;
+			list-style-type: none;
 			@include column(1/3);
 			@include respond-to("mobile"){
 				@include column(1);
