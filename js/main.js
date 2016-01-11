@@ -172,7 +172,8 @@ var sponsorSmallImages = {
   "Coding Lady Colonials": "img/sponsor-logos-small/clc.png",
   "Major League Hacking": "img/sponsor-logos-small/mlh.png",
   "Yext": "img/sponsor-logos-small/yext.png",
-  "Capital One": "img/sponsor-logos-small/capone.png"
+  "Capital One": "img/sponsor-logos-small/capone.png",
+  "KPCB Fellows Program": "img/sponsor-logos-small/kpcb.png"
 }
 function setImages(count){
   var doneImages = [];
