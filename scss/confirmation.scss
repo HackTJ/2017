@@ -14,7 +14,7 @@ $header-family: "Roboto", sans-serif;
 @import "fonts";
 
 body {
-	background-color: $hacktj-primary;
+	@include linear-gradient($hacktj-primary, #82A3D5);
 	font-family: $body-family;
 	font-weight: 300;
 	color: white;
