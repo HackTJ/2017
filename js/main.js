@@ -173,7 +173,8 @@ var sponsorSmallImages = {
   "Major League Hacking": "img/sponsor-logos-small/mlh.png",
   "Yext": "img/sponsor-logos-small/yext.png",
   "Capital One": "img/sponsor-logos-small/capone.png",
-  "KPCB Fellows Program": "img/sponsor-logos-small/kpcb.png"
+  "KPCB Fellows Program": "img/sponsor-logos-small/kpcb.png",
+  "MongoDB": "img/sponsor-logos-small/mongodb.png"
 }
 function setImages(count){
   var doneImages = [];
