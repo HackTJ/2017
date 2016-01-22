@@ -174,7 +174,9 @@ var sponsorSmallImages = {
   "Yext": "img/sponsor-logos-small/yext.png",
   "Capital One": "img/sponsor-logos-small/capone.png",
   "KPCB Fellows Program": "img/sponsor-logos-small/kpcb.png",
-  "MongoDB": "img/sponsor-logos-small/mongodb.png"
+  "MongoDB": "img/sponsor-logos-small/mongodb.png",
+  "RazorX2": "img/sponsor-logos-small/razorx2.png",
+  "Real Thread": "img/sponsor-logos-small/realthread.png",
 }
 function setImages(count){
   var doneImages = [];
