@@ -136,7 +136,7 @@ if(!isMobile){
       var animations = {ease: Linear.easeNone};
       if(hasClass(segment, 'vertical')){ 
         animations.height = "100%"; 
-        animateDuration = segment.clientHeight * 1.2;
+        animateDuration = segment.clientHeight * 1.3;
       }
       if(hasClass(segment, 'horizontal')){ 
         animations.width = "100%"; 
