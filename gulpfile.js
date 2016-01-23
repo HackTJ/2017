@@ -66,15 +66,22 @@ compiler.css = function() {
 // Compile JS
 compiler.js = function() {
 	console.log('Compiling JS...');
-	var deferred = when.defer();
+	var main = when.defer();
     gulp.src(['./js/__*.js', './js/_*.js', './js/*.js'])
         .pipe(concat('main.js'))
         .pipe(minifyJS())
         .pipe(gulp.dest('./out/js'))
         .on('end', function(){
-        	deferred.resolve();
+        	main.resolve();
         });
-    return deferred.promise;
+    var upload = when.defer();
+    gulp.src('./js/upload.js')
+        .pipe(minifyJS())
+        .pipe(gulp.dest('./out/js'))
+        .on('end', function(){
+            upload.resolve();
+        });
+    return when.all([main, upload]).promise;
 }
 
 // Compile static resources

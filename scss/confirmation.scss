@@ -2,6 +2,8 @@ $base-font-size: 14px;
 $hacktj-primary: #A1B6D5;
 $text-color: #333333;
 $line-width: 7px;
+$green: #68bb68;
+$red: #EA5C5C;
 
 $body-family: "Avenir Next", sans-serif;
 $header-family: "Roboto", sans-serif;
@@ -23,6 +25,14 @@ body {
 	min-height: 100%;
 }
 
+strong {
+	font-weight: 500;
+}
+
+a {
+	text-decoration: underline;
+}
+
 button, .button {
 	text-decoration: none;
 	display: inline-block;
@@ -38,6 +48,18 @@ button, .button {
 	cursor: pointer;
 	position: relative;
 	color: $hacktj-primary;
+	.icon{
+		font-size: 25px;
+		margin-top: 10px;
+		margin-right: 0.5em;
+	}
+	&.upload{
+		display: block;
+		margin: 5px 0;
+		font-size: 16px;
+		padding: 0 15px;
+		margin-left: 10px;
+	}
 	&:hover{
 		background-color: $hacktj-primary;
 		border-color: $hacktj-primary;
@@ -55,10 +77,25 @@ button, .button {
 	max-width: 800px;
 	margin: auto;
 	
-	position: absolute;
-	top: 5%;
-	left: 50%;
-	transform: translate(-50%, 0);
+	&.not-found{
+		.action-section{
+			display: none;
+			&.not-found{
+				display: block;
+			}
+		}
+	}
+	
+	&.relative{
+		position: relative;
+		margin-top: 20px;
+	}
+	&:not(.relative){
+		position: absolute;
+		top: 5%;
+		left: 50%;
+		transform: translate(-50%, 0);
+	}
 
 	@include respond-to("mobile"){
 		position: relative;
@@ -67,18 +104,20 @@ button, .button {
 		transform: none;
 		margin-top: 1em;
 	}
-	.icon{
-		display: block;
-		text-align: center;
-		font-size: 10em;
-		opacity: 0.8;
-	}
-	.title{
-		font-family: $header-family;
-		font-size: 2em;
-		text-align: center;
-		font-weight: 100;
-		margin: 0px auto 0;
+	.header-section{
+		.icon{
+			display: block;
+			text-align: center;
+			font-size: 10em;
+			opacity: 0.8;
+		}
+		.title{
+			font-family: $header-family;
+			font-size: 2em;
+			text-align: center;
+			font-weight: 100;
+			margin: 0px auto 0;
+		}
 	}
 	.action-section{
 		background: white;
@@ -92,11 +131,80 @@ button, .button {
 		padding: 20px 30px;
 		box-shadow: 0 5px 5px rgba(51, 51, 51, 0.2);
 		text-align: center;
+		&.align-left{
+			text-align: left;
+		}
 		&.large-text{
 			font-size: 1.1em;
 			@include respond-to("mobile"){
 				font-size: 1.3em;
 			}
+		}
+		li{
+			margin-top: 20px;
+			.complete-text{
+				display: none;
+				font-size: 1.1em;
+				margin-top: 10px;
+				margin-left: 10px;
+				font-weight: 500;
+				color: $green;
+				.icon{
+					margin-right: 0.3em;
+					font-size: 1.5em;
+				}
+				a{
+					margin-left: 0.3em;
+					font-weight: 300;
+				}
+				.filename{
+					display: inline;
+					font-weight: 300;
+					color: $text-color;
+				}
+			}
+			&.completed{
+				.complete-text{
+					display: block;
+				}
+				.upload{
+					display: none;
+				}
+			}
+		}
+		.status-container{
+			h3{
+				font-size: 1.3em;
+				text-align: center;
+				font-weight: 300;
+			}
+			.incomplete{
+				color: $red;
+				display: inline;
+			}
+			.complete{
+				color: $green;
+				display: none;
+			}
+			&.completed{
+				.complete{
+					display: inline;
+					&.thanks{
+						display: block;
+					}
+				}
+				.incomplete{
+					display: none;
+				}
+			}
+			.complete.thanks{
+				margin-top: 20px;
+				color: $text-color;
+				text-align: center;
+			}
+		}
+		&.not-found{
+			display: none;
 		}
 	}
 }
@@ -112,6 +220,10 @@ button, .button {
 	vertical-align: middle;
 	@include respond-to("mobile"){
 		width: 100%;
+	}
+	&.relative{
+		position: relative;
+		bottom: 15px;
 	}
 	.logo{
 		width: 140px;
