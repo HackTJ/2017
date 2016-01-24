@@ -53,7 +53,7 @@ function queryParam(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-var HOST = "http://localhost:4000";
+var HOST = "https://api.hacktj.org";
 var mainBox = document.querySelector('.centered-box');
 var eccItem = document.querySelector('li.ecc');
 var fieldtripItem = document.querySelector('li.fieldtrip');
@@ -85,7 +85,7 @@ function upload(form_type){
   filepicker.pickAndStore({
       mimetypes: ['image/', 'application/pdf'],
       maxsize: 20*1024*1024,
-      services: ['COMPUTER', 'GOOGLE_DRIVE', 'DROPBOX', 'EVERNOTE', 'SKYDRIVE', 'CLOUDDRIVE', 'BOX', 'GMAIL'],
+      services: ['COMPUTER', 'GOOGLE_DRIVE', 'DROPBOX', 'EVERNOTE', 'SKYDRIVE', 'CLOUDDRIVE', 'GMAIL', 'FTP', 'CLOUDAPP', 'BOX'],
     },{},
     //   location: 'S3',
     //   storeContainer: 'hacktj-forms',
