@@ -64,13 +64,16 @@ var userStatus = {};
 function updateClasses(){
   if(userStatus.ecc){
     addClass(eccItem, "completed");
-    document.querySelector('.filename.ecc').textContent = userStatus.ecc;
+    document.querySelector('.filename.ecc').textContent = userStatus.ecc.filename;
+    document.querySelector('.preview.ecc').href = userStatus.ecc.url;
   }else{
     removeClass(eccItem, "completed");
   }
   if(userStatus.fieldtrip){
     addClass(fieldtripItem, "completed");
-    document.querySelector('.filename.fieldtrip').textContent = userStatus.fieldtrip;
+    document.querySelector('.filename.fieldtrip').textContent = userStatus.fieldtrip.filename;
+        document.querySelector('.preview.fieldtrip').href = userStatus.fieldtrip.url;
+
   }else{
     removeClass(fieldtripItem, "completed");
   }
@@ -93,7 +96,10 @@ function upload(form_type){
     //   access: 'private'
     // },
     function(results){
-      userStatus[form_type] = results[0].filename;
+      userStatus[form_type] = {
+        filename: results[0].filename,
+        url: results[0].url
+      }
       
       var request = new XMLHttpRequest();
       request.open('POST', HOST+'/forms/'+userId, true);

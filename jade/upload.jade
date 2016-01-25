@@ -19,8 +19,9 @@ html(prefix="og: http://ogp.me/ns#")
 			.action-section.not-found
 				p Please use the link sent to your email address to upload your forms.
 			.action-section.align-left
-				p There's a couple of forms you need to submit before you come to HackTJ. Please fill out and sign the following forms, then upload a digital copy, scan, or (high-resolution, legible) photo here. #[strong Both of these are due at 11:59pm on Friday, January 29], and if we don't receive yours by that time we will give your spot to someone on the waitlist. 
-				p Please note that we do not access school records, so we cannot use information already on file with your school. These forms are required for #[strong all] students, even 18 year-olds.
+				p There are two forms you must submit before you arrive at HackTJ. Please fill out and have a parent/guardian sign the following forms, then scan and upload the documents here. (If you don’t have access to a scanner, you may try uploading a high-resolution, legible photo, but we will ask you to re-submit if they are not clear.) #[strong Both forms are due no later than 11:59pm on Friday, January 29.] If we don’t receive both forms by that date, your spot will be given to someone on the waitlist.
+
+				p Please note that we do not have access to school records, so we can not use information already on file with your school.  These forms are required for all students and must be signed by a parent/guardian, even if the student is 18.
 				p As always, email us at #[a(href='mailto:hello@hacktj.org') hello@hacktj.org] if you need help or have any questions.
 				hr
 				ol
@@ -30,7 +31,10 @@ html(prefix="og: http://ogp.me/ns#")
 							| Upload File
 						.complete-text
 							.icon.icon-check
-							| Uploaded: #[.filename.ecc &nsbp;]  #[a(onclick="upload('ecc')") edit]
+							| Uploaded: #[.filename.ecc &nsbp;]  
+							.links
+								a.preview.ecc(target="_blank" href="/") preview
+								a.edit(onclick="upload('ecc')") edit
 					li.fieldtrip HackTJ Permission Form (#[a(href='forms/fieldtrip.pdf' target="_blank") download])
 						input(name="fieldtrip" type="hidden")
 						button.upload.fieldtrip(onclick="upload('fieldtrip')")
@@ -38,7 +42,10 @@ html(prefix="og: http://ogp.me/ns#")
 							| Upload File
 						.complete-text
 							.icon.icon-check
-							| Uploaded: #[.filename.fieldtrip &nsbp;] #[a(onclick="upload('fieldtrip')") edit]
+							| Uploaded: #[.filename.fieldtrip &nsbp;] 
+							.links
+								a.preview.fieldtrip(target="_blank" href="/") preview
+								a.edit(onclick="upload('fieldtrip')") edit
 				hr
 				.status-container
 					h3 Your status: #[strong.incomplete Incomplete] #[strong.complete Completed]

@@ -162,6 +162,9 @@ button, .button {
 					font-weight: 300;
 					color: $text-color;
 				}
+				.edit{
+					padding-left: 0.5em;
+				}
 			}
 			&.completed{
 				.complete-text{
