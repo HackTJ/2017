@@ -86,7 +86,7 @@ function updateClasses(){
 filepicker.setKey("AcFwfLxwuTgOlZqJ5bWGez");
 function upload(form_type){
   filepicker.pickAndStore({
-      mimetypes: ['image/', 'application/pdf'],
+      mimetypes: ['image/*', 'application/pdf'],
       maxsize: 20*1024*1024,
       services: ['COMPUTER', 'GOOGLE_DRIVE', 'DROPBOX', 'EVERNOTE', 'SKYDRIVE', 'CLOUDDRIVE', 'GMAIL', 'FTP', 'CLOUDAPP', 'BOX'],
     },{
