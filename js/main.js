@@ -177,6 +177,8 @@ var sponsorSmallImages = {
   "MongoDB": "img/sponsor-logos-small/mongodb.png",
   "RazorX2": "img/sponsor-logos-small/razorx2.png",
   "Real Thread": "img/sponsor-logos-small/realthread.png",
+  "Filestack": "img/sponsor-logos-small/filestack.png",
+  "L'Oréal USA": "img/sponsor-logos-small/loreal.png"
 }
 function setImages(count){
   var doneImages = [];
