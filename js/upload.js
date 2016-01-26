@@ -89,12 +89,12 @@ function upload(form_type){
       mimetypes: ['image/', 'application/pdf'],
       maxsize: 20*1024*1024,
       services: ['COMPUTER', 'GOOGLE_DRIVE', 'DROPBOX', 'EVERNOTE', 'SKYDRIVE', 'CLOUDDRIVE', 'GMAIL', 'FTP', 'CLOUDAPP', 'BOX'],
-    },{},
-    //   location: 'S3',
-    //   storeContainer: 'hacktj-forms',
-    //   path: '/students/'+userId+'/',
-    //   access: 'private'
-    // },
+    },{
+      location: 'S3',
+      storeContainer: 'hacktj-forms',
+      path: '/students/'+userId+'/',
+      access: 'private'
+    },
     function(results){
       userStatus[form_type] = {
         filename: results[0].filename,
