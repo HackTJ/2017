@@ -178,7 +178,8 @@ var sponsorSmallImages = {
   "RazorX2": "img/sponsor-logos-small/razorx2.png",
   "Real Thread": "img/sponsor-logos-small/realthread.png",
   "Filestack": "img/sponsor-logos-small/filestack.png",
-  "L'Oréal USA": "img/sponsor-logos-small/loreal.png"
+  "L'Oréal USA": "img/sponsor-logos-small/loreal.png",
+  "Palantir": "img/sponsor-logos-small/palantir.png",
 }
 function setImages(count){
   var doneImages = [];
