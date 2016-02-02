@@ -119,6 +119,8 @@ request.onload = function() {
   } else {
     if(request.status == 404){
       addClass(mainBox, "not-found")
+    }else if(request.status == 400){
+      addClass(mainBox, "deadline-passed")
     }
   }
 };

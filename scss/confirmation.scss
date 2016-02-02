@@ -85,6 +85,15 @@ button, .button {
 			}
 		}
 	}
+
+	&.deadline-passed{
+		.action-section{
+			display: none;
+			&.deadline-passed{
+				display: block;
+			}
+		}
+	}
 	
 	&.relative{
 		position: relative;
