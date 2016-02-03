@@ -218,6 +218,9 @@ button, .button {
 		&.not-found{
 			display: none;
 		}
+		&.deadline-passed{
+			display: none;
+		}
 	}
 }
 
