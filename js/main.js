@@ -180,6 +180,9 @@ var sponsorSmallImages = {
   "Filestack": "img/sponsor-logos-small/filestack.png",
   "L'Oréal USA": "img/sponsor-logos-small/loreal.png",
   "Palantir": "img/sponsor-logos-small/palantir.png",
+  "OpsClick": "img/sponsor-logos-small/opsclick.png",
+  "BigParser": "img/sponsor-logos-small/bigparser.png",
+  "TIC Camp": "img/sponsor-logos-small/tic.png"
 }
 function setImages(count){
   var doneImages = [];
