@@ -182,8 +182,11 @@ var sponsorSmallImages = {
   "Palantir": "img/sponsor-logos-small/palantir.png",
   "OpsClick": "img/sponsor-logos-small/opsclick.png",
   "BigParser": "img/sponsor-logos-small/bigparser.png",
-  "TIC Camp": "img/sponsor-logos-small/tic.png"
+  "TIC Camp": "img/sponsor-logos-small/tic.png",
+  "MIT Launch": "img/sponsor-logos-small/mitlaunch.png",
+  "Phone2Action": "img/sponsor-logos-small/phone2action.png"
 }
+
 function setImages(count){
   var doneImages = [];
   setTimeout(function(){
