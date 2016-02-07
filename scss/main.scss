@@ -197,6 +197,12 @@ button, .button {
 	}
 	transition: background-color 0.25s, border-color 0.25s, color 0.25s, padding-left 0.25s;
 }
+a.button{
+	color: white;
+	text-align: center;
+	font-size: 1.5em;
+	line-height: 50px;
+}
 
 p.large{
 	font-size: 20px;
