@@ -1,7 +1,7 @@
 /* Config settings - Update this when you clone the repo */
 var eventRepo = {
 	remoteUrl: "https://github.com/HackTJ/2017.git",
-	branch: "master",
+	branch: "gh-pages",
 	cacheDir: '.page'
 }
 var homepageRepo = {
