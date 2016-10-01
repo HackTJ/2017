@@ -1,6 +1,6 @@
-HackTJ 2016
+HackTJ 2017
 ===========
-The website for HackTJ 2016, held on Feburary 5th-6th, 2016.
+The website for HackTJ 2017, held on Feburary 5th-6th, 2017.
 
 Setup
 -----
@@ -34,4 +34,4 @@ This project uses [gulp](http://gulpjs.com) to compile and deploy the site, and 
 
 Notes for next year
 -------------------
-For next year's hackathon, you need to fork this repo and rename the copy to 2017 - that way it will be displayed on our website at hacktj.org/2017 while leaving the old website up at hacktj.org/2016
+For next year's hackathon, you need to fork this repo and rename the copy to 2018 - that way it will be displayed on our website at hacktj.org/2018 while leaving the old website up at hacktj.org/2017
