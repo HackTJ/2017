@@ -19,7 +19,6 @@ html{
 }
 body {
 	font-family: $body-family;
-	font-weight: 300;
 	color: $text-color;
 	@include respond-to("mobile"){
 		overflow-x: hidden;
@@ -123,10 +122,6 @@ input{
 	}
 }
 
-label {
-	font-weight: 100;
-}
-
 a{
 	color: $hacktj-primary;
 	text-decoration: underline;
@@ -206,7 +201,6 @@ a.button{
 
 p.large{
 	font-size: 20px;
-	font-weight: 100;
 	line-height: 1.7em;
 	margin-bottom: 0;
 }
@@ -334,7 +328,6 @@ p.large{
 	width: 500px;
 	.register-text{
 		font-size: 20px;
-		font-weight: 100;
 		width: 100%;
 		margin: auto;
 		display: block;
@@ -431,7 +424,6 @@ section.hero{
 		}
 		&.event-location{
 			font-size: 25px;
-			font-weight: 100;
 			@include respond-to("mobile"){
 				margin-top: 10px;
 				font-size: 22px;
@@ -544,7 +536,6 @@ section.faq{
 				position: relative;
 				font-size: 20px;
 				text-align: center;
-				font-weight: 100;
 				background-color: white;
 				color: #555;
 				text-align: left;
@@ -598,7 +589,6 @@ section.faq{
 				}
 				font-size: 15px;
 				line-height: 1.4em;
-				font-weight: 100;
 				opacity: 1;
 				overflow: hidden;
 				background: white;
@@ -743,7 +733,6 @@ section.schedule{
 				display: inline-block;
 				color: $hacktj-primary;
 				font-family: $body-family;
-				font-weight: 100;
 				@include column(1/4);
 				@include respond-to("mobile"){
 					@include column(1/3);
