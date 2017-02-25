@@ -34,4 +34,4 @@ This project uses [gulp](http://gulpjs.com) to compile and deploy the site, and 
 
 Notes for next year
 -------------------
-For next year's hackathon, you need to fork this repo and rename the copy to 2018 - that way it will be displayed on our website at hacktj.org/2018 while leaving the old website up at hacktj.org/2017
+For next year's hackathon, you need to fork this repo and rename the copy to [current year + 1] - that way it will be displayed on our website at hacktj.org/[current year + 1] while leaving the old website up at hacktj.org/[current year]. Update gulpfile.js by changing the eventRepo remoteUrl to the new git url. Make sure to update all references to year and date.
