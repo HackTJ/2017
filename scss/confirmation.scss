@@ -16,9 +16,9 @@ $header-family: "Roboto", sans-serif;
 @import "fonts";
 
 body {
-	@include linear-gradient($hacktj-primary, #82A3D5);
+	@include linear-gradient(#82A3D5,$hacktj-primary);
 	font-family: $body-family;
-	font-weight: 300;
+	font-weight: 500;
 	color: white;
 	position: relative;
 	width: 100%;
@@ -26,7 +26,7 @@ body {
 }
 
 strong {
-	font-weight: 500;
+	font-weight: 700;
 }
 
 a {
@@ -164,11 +164,11 @@ button, .button {
 				}
 				a{
 					margin-left: 0.3em;
-					font-weight: 300;
+					font-weight: 500;
 				}
 				.filename{
 					display: inline;
-					font-weight: 300;
+					font-weight: 500;
 					color: $text-color;
 				}
 				.edit{
@@ -188,7 +188,7 @@ button, .button {
 			h3{
 				font-size: 1.3em;
 				text-align: center;
-				font-weight: 300;
+				font-weight: 500;
 			}
 			.incomplete{
 				color: $red;
