@@ -91,7 +91,7 @@ function upload(form_type){
       services: ['COMPUTER', 'GOOGLE_DRIVE', 'DROPBOX', 'EVERNOTE', 'SKYDRIVE', 'CLOUDDRIVE', 'GMAIL', 'FTP', 'CLOUDAPP', 'BOX'],
     },{
       location: 'S3',
-      storeContainer: 'hacktj-forms',
+      storeContainer: 'hacktj4-forms',
       path: '/students/'+userId+'/',
       access: 'private'
     },
