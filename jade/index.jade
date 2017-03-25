@@ -32,10 +32,9 @@
 				.event-date March 25th-26th, 2017
 				.event-location Thomas Jefferson High School for Science and Technology
 				.register-button-block.top
-					button.register-button.student Register as a Student Hacker
-						script(async src="//widgets.nvite.com/1.6/button.js" data-resource="c8b8" data-class="nvite-button")
-					button.register-button.mentor Register as a Volunteer or Mentor
-						script(async src="//widgets.nvite.com/1.6/button.js" data-resource="3j7dml" data-class="nvite-button")
+					a.button.register-button.mentor(href="https://docs.google.com/document/d/1tpKCwFMMnfmqwV9El9HzXhN3oTeAQpH_LkFcxKCT43Y/edit?usp=sharing", target="_blank") Schedule
+					a.button.register-button.mentor(href="/submit", target="_blank") Submit Hack
+					//a.button.register-button.mentor(href="/mentors", target="_blank") Request Mentor
 		section.intro
 			.container
 				.animation-container.vertical.left.top.extra-height#trigger
@@ -210,13 +209,12 @@
 		section.red.register
 			.container
 				.register-button-block.bottom
-					button.register-button.student Register as a Student Hacker
-						script(async src="//widgets.nvite.com/1.6/button.js" data-resource="c8b8" data-class="nvite-button")
+					a.button.register-button.mentor(href="/mentors", target="_blank") Request Mentor
 				.register-button-block.bottom
-					button.register-button.mentor Register as a Volunteer or Mentor
-						script(async src="//widgets.nvite.com/1.6/button.js" data-resource="3j7dml" data-class="nvite-button")
+					//button.register-button.mentor Register as a Volunteer or Mentor
+						//script(async src="//widgets.nvite.com/1.6/button.js" data-resource="3j7dml" data-class="nvite-button")
 						//script(async src="//widgets.nvite.com/1.1/button.js" data-resource="hacktjmentorvolunteers" data-class="nvite-button")
-					a.button.register-button.mentor(href="/submit", target="_blank") View 2016 Hacks
+					
 					.register-text Be sure to follow our Social Media pages for updates!
 				.social-links
 					a.social.pe-so-twitter(target="_blank" href="https://twitter.com/HackTJOfficial")
